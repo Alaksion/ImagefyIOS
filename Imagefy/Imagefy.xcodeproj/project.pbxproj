@@ -23,6 +23,7 @@
 		E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */; };
 		E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */; };
 		E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */; };
+		E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhoto.swift; sourceTree = "<group>"; };
 		E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepository.swift; sourceTree = "<group>"; };
+		E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E5276374287A0946000E1F24 /* HomeViewController.swift */,
+				E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E5276393287A0C63000E1F24 /* RequestError.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
+				E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */,
 				E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */,
 				E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */,
 				E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */,
