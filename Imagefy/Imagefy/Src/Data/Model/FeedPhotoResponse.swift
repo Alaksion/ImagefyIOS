@@ -14,7 +14,7 @@ struct FeedPhotoResponse: Codable {
     let updatedAt: String
     let color: String
     let likes: Int
-    let description: String
+    let description: String?
     let urls: FeedPhotoUrlsResponse
     
     enum CodingKeys: String, CodingKey {
@@ -33,7 +33,7 @@ struct FeedPhotoResponse: Codable {
             createdAt: Date(),
             color: UIColor.blue,
             likes: self.likes,
-            description: self.description,
+            description: self.description ?? "0",
             urls: self.urls.mapToPhotoUrls()
         )
     }

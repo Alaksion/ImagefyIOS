@@ -74,10 +74,13 @@ extension HttpClient {
         
         switch responseData.statusCode {
         case 200...299:
-            guard let decoded = try? JSONDecoder().decode(T.self, from: data) else {
-                throw RequestError.decode
+            do {
+                let decode = try JSONDecoder().decode(T.self, from: data)
+                return decode
+                
+            } catch let error {
+                throw RequestError.decode(error: error)
             }
-            return decoded
         case 401:
             throw RequestError.unauthorized
         default:
