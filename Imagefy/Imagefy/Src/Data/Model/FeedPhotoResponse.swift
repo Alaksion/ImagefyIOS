@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct FeedPhotoResponse: Codable {
     let id : String
@@ -25,6 +26,17 @@ struct FeedPhotoResponse: Codable {
         case description
         case urls
     }
+    
+    func mapToFeedPhoto() -> FeedPhoto {
+        return FeedPhoto(
+            id: self.id,
+            createdAt: Date(),
+            color: UIColor.blue,
+            likes: self.likes,
+            description: self.description,
+            urls: self.urls.mapToPhotoUrls()
+        )
+    }
 }
 
 struct FeedPhotoUrlsResponse : Codable {
@@ -32,4 +44,13 @@ struct FeedPhotoUrlsResponse : Codable {
     let full: String
     let regular: String
     let thumb: String
+    
+    func mapToPhotoUrls() -> FeedPhotoUrls {
+        return FeedPhotoUrls(
+            raw: self.raw,
+            full: self.full,
+            regular: self.regular,
+            thumb: self.thumb
+        )
+    }
 }

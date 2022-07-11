@@ -18,6 +18,11 @@
 		E5276393287A0C63000E1F24 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276392287A0C63000E1F24 /* RequestError.swift */; };
 		E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276395287A0CF8000E1F24 /* FeedPhotoResponse.swift */; };
 		E527639A287A0EBC000E1F24 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276399287A0EBC000E1F24 /* HttpClient.swift */; };
+		E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527639C287CA947000E1F24 /* ImagefyService.swift */; };
+		E52763A0287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527639F287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift */; };
+		E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */; };
+		E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */; };
+		E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		E5276392287A0C63000E1F24 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		E5276395287A0CF8000E1F24 /* FeedPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhotoResponse.swift; sourceTree = "<group>"; };
 		E5276399287A0EBC000E1F24 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		E527639C287CA947000E1F24 /* ImagefyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyService.swift; sourceTree = "<group>"; };
+		E527639F287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRemoteDataSource.swift; sourceTree = "<group>"; };
+		E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhoto.swift; sourceTree = "<group>"; };
+		E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,9 @@
 		E5276387287A096D000E1F24 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E52763A1287CAC72000E1F24 /* Repository */,
+				E527639E287CAB5A000E1F24 /* DataSource */,
+				E527639B287CA938000E1F24 /* Service */,
 				E5276394287A0CA5000E1F24 /* Model */,
 			);
 			path = Data;
@@ -115,6 +128,8 @@
 		E5276388287A0975000E1F24 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E52763A3287CAC7B000E1F24 /* Repository */,
+				E52763A2287CAC78000E1F24 /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -160,6 +175,46 @@
 				E5276392287A0C63000E1F24 /* RequestError.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E527639B287CA938000E1F24 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E527639C287CA947000E1F24 /* ImagefyService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E527639E287CAB5A000E1F24 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E527639F287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		E52763A1287CAC72000E1F24 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E52763A2287CAC78000E1F24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E52763A3287CAC7B000E1F24 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,12 +289,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E527638E287A0AB5000E1F24 /* EndpointProtocol.swift in Sources */,
+				E52763A0287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
 				E527639A287A0EBC000E1F24 /* HttpClient.swift in Sources */,
+				E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */,
+				E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */,
+				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E5276393287A0C63000E1F24 /* RequestError.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
 				E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */,
 				E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */,
+				E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */,
 				E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

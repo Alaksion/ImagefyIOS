@@ -14,7 +14,7 @@ protocol HttpClient {
     ) async -> Result<T, RequestError>
 }
 
-final class DefaultHttpClient: HttpClient {
+extension HttpClient {
     
     func sendRequest<T>(
         endpoint: EndpointProtocol,
@@ -70,7 +70,6 @@ final class DefaultHttpClient: HttpClient {
         
         guard let responseData = response as? HTTPURLResponse else {
             throw RequestError.noResponse
-            
         }
         
         switch responseData.statusCode {
