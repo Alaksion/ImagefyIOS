@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522BFC728846B2D001F6AE9 /* PhotoCell.swift */; };
 		E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276370287A0946000E1F24 /* AppDelegate.swift */; };
 		E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276372287A0946000E1F24 /* SceneDelegate.swift */; };
 		E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276374287A0946000E1F24 /* HomeViewController.swift */; };
@@ -24,9 +25,11 @@
 		E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */; };
 		E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */; };
 		E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */; };
+		E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B23A2884646E0051A541 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E522BFC728846B2D001F6AE9 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E527636D287A0946000E1F24 /* Imagefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5276370287A0946000E1F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5276372287A0946000E1F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		E52763A8287CAD5C000E1F24 /* FeedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhoto.swift; sourceTree = "<group>"; };
 		E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepository.swift; sourceTree = "<group>"; };
 		E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E5A7B23A2884646E0051A541 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E522BFC628846B1E001F6AE9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5A7B23A2884646E0051A541 /* HomeView.swift */,
+				E522BFC728846B2D001F6AE9 /* PhotoCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E5276364287A0946000E1F24 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 		E527638A287A0A47000E1F24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E522BFC628846B1E001F6AE9 /* Components */,
 				E5276374287A0946000E1F24 /* HomeViewController.swift */,
 				E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */,
 			);
@@ -294,6 +308,8 @@
 				E527638E287A0AB5000E1F24 /* EndpointProtocol.swift in Sources */,
 				E52763A0287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
+				E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */,
+				E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */,
 				E527639A287A0EBC000E1F24 /* HttpClient.swift in Sources */,
 				E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */,
 				E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */,
