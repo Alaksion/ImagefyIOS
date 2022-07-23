@@ -44,14 +44,15 @@ class PhotoCell: UITableViewCell {
         let view = UIStackView(arrangedSubviews: [Header, Photo, LikesRow, CreditsBox])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.spacing = 10
+        view.spacing = 5
+        view.setCustomSpacing(10, after: Photo)
         return view
     }()
     
     private lazy var Header: UIStackView = {
         let view = UIStackView(arrangedSubviews: [ProfileImage, Names])
         view.axis = .horizontal
-        view.spacing = 10
+        view.spacing = 5
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         view.alignment = .center
