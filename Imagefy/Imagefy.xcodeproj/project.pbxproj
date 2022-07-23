@@ -26,6 +26,11 @@
 		E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */; };
 		E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */; };
 		E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B23A2884646E0051A541 /* HomeView.swift */; };
+		E5CC0302288C4FEA00E404B3 /* HomeViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0301288C4FEA00E404B3 /* HomeViewModelDelegate.swift */; };
+		E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0304288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift */; };
+		E5CC030C288C618400E404B3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC030B288C618400E404B3 /* ImageLoader.swift */; };
+		E5CC030F288C6B8C00E404B3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC030E288C6B8C00E404B3 /* UIImageView.swift */; };
+		E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0312288C7F8B00E404B3 /* UIImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		E52763AA287CADFA000E1F24 /* ImagefyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepository.swift; sourceTree = "<group>"; };
 		E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E5A7B23A2884646E0051A541 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E5CC0301288C4FEA00E404B3 /* HomeViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDelegate.swift; sourceTree = "<group>"; };
+		E5CC0304288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhotoAuthorResponse.swift; sourceTree = "<group>"; };
+		E5CC030B288C618400E404B3 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E5CC030E288C6B8C00E404B3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		E5CC0312288C7F8B00E404B3 /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,7 @@
 		E5276384287A094F000E1F24 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E5CC030D288C6B7B00E404B3 /* Extensions */,
 				E527638B287A0A62000E1F24 /* Network */,
 				E5276372287A0946000E1F24 /* SceneDelegate.swift */,
 				E5276370287A0946000E1F24 /* AppDelegate.swift */,
@@ -163,6 +174,7 @@
 				E522BFC628846B1E001F6AE9 /* Components */,
 				E5276374287A0946000E1F24 /* HomeViewController.swift */,
 				E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */,
+				E5CC0301288C4FEA00E404B3 /* HomeViewModelDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -170,8 +182,8 @@
 		E527638B287A0A62000E1F24 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E5276397287A0EA8000E1F24 /* Models */,
-				E5276399287A0EBC000E1F24 /* HttpClient.swift */,
+				E5CC030A288C617800E404B3 /* Image */,
+				E5CC0306288C5CC700E404B3 /* Http */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -179,7 +191,7 @@
 		E5276394287A0CA5000E1F24 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5276395287A0CF8000E1F24 /* FeedPhotoResponse.swift */,
+				E5CC0303288C5BE600E404B3 /* FeedPhoto */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +244,41 @@
 				E52763A4287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E5CC0303288C5BE600E404B3 /* FeedPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				E5276395287A0CF8000E1F24 /* FeedPhotoResponse.swift */,
+				E5CC0304288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift */,
+			);
+			path = FeedPhoto;
+			sourceTree = "<group>";
+		};
+		E5CC0306288C5CC700E404B3 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				E5276399287A0EBC000E1F24 /* HttpClient.swift */,
+				E5276397287A0EA8000E1F24 /* Models */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		E5CC030A288C617800E404B3 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC030B288C618400E404B3 /* ImageLoader.swift */,
+				E5CC0312288C7F8B00E404B3 /* UIImageLoader.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		E5CC030D288C6B7B00E404B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC030E288C6B8C00E404B3 /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,14 +357,19 @@
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
 				E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */,
 				E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */,
+				E5CC0302288C4FEA00E404B3 /* HomeViewModelDelegate.swift in Sources */,
 				E527639A287A0EBC000E1F24 /* HttpClient.swift in Sources */,
 				E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */,
 				E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */,
+				E5CC030C288C618400E404B3 /* ImageLoader.swift in Sources */,
 				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E5276393287A0C63000E1F24 /* RequestError.swift in Sources */,
+				E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
+				E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */,
 				E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */,
 				E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */,
+				E5CC030F288C6B8C00E404B3 /* UIImageView.swift in Sources */,
 				E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */,
 				E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */,
 				E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */,

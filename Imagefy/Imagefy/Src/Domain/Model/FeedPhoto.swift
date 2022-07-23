@@ -9,12 +9,15 @@ import Foundation
 import UIKit
 
 struct FeedPhoto {
+    let authorName: String
+    let authorUsername: String
     let id : String
     let createdAt: Date
     let color: UIColor
     let likes : Int
     let description: String
     let urls : FeedPhotoUrls
+    let autorProfilePic : String
 }
 
 struct FeedPhotoUrls {

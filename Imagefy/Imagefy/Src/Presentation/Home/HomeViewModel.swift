@@ -7,29 +7,48 @@
 
 import Foundation
 
-struct HomeViewModel {
+class HomeViewModel {
     
     private let repository: ImagefyRepositoryProtocol
     
-    private var page = 1
+    var photos : [FeedPhoto] = []
+    var page: Int = 1
+    private var isNextPageLoading = false
+    
+    var delegate: HomeViewModelDelegate?
+    
+    let imageLoader = DefaultImageLoader()
     
     init(_ repository: ImagefyRepositoryProtocol) {
         self.repository = repository
     }
     
-    func getPhotos(
-        onResponse: @escaping ([FeedPhoto]) -> Void,
-        onError: @escaping (Error) -> Void
-    ) {
+    func getPhotos() {
         Task(priority: .background) {
-            let response = await repository.getFeedPhotos(page: page)
-            switch response {
-            case .failure(let error):
-                onError(error)
-            case .success(let data):
-                onResponse(data)
+            if shouldLoadNextPage() {
+                isNextPageLoading = true
+                let response = await repository.getFeedPhotos(page: page)
+                
+                switch response {
+                case .failure(let error):
+                    delegate?.onError(error: error)
+                    isNextPageLoading = false
+                case .success(let data):
+                    photos.append(contentsOf: data)
+                    delegate?.onResponse()
+                    page = page + 1
+                    isNextPageLoading = false
+                }
             }
         }
+    }
+    
+    private func shouldLoadNextPage() -> Bool {
+        if page == 1 {
+            return true
+        }
+        
+        return page > 1 && !isNextPageLoading
     }
     
 }

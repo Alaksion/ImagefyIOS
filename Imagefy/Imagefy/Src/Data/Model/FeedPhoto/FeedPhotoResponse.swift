@@ -16,6 +16,7 @@ struct FeedPhotoResponse: Codable {
     let likes: Int
     let description: String?
     let urls: FeedPhotoUrlsResponse
+    let user: FeedPhotoAuthorResponse
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -25,16 +26,20 @@ struct FeedPhotoResponse: Codable {
         case likes
         case description
         case urls
+        case user
     }
     
     func mapToFeedPhoto() -> FeedPhoto {
         return FeedPhoto(
+            authorName: self.user.name,
+            authorUsername: self.user.username,
             id: self.id,
             createdAt: Date(),
             color: UIColor.blue,
             likes: self.likes,
             description: self.description ?? "0",
-            urls: self.urls.mapToPhotoUrls()
+            urls: self.urls.mapToPhotoUrls(),
+            autorProfilePic: self.user.profileImages.small
         )
     }
 }
