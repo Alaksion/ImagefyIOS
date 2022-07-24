@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate {
     
     func onResponse() {
         DispatchQueue.main.async {
@@ -18,7 +18,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func onError(error: RequestError) {
         print(error)
     }
-    
     
     private let viewModel = HomeViewModel(
         ImagefyRepository(
@@ -43,6 +42,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         homeView.PhotosTable.register(PhotoCell.self, forCellReuseIdentifier: "photoCell")
     }
     
+}
+
+extension HomeViewController {
+ 
     func numberOfSections(in tableView: UITableView) -> Int {
         // #1 Cria uma seção para cada item
         return viewModel.photos.count

@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let uiWindow = UIWindow(windowScene: localScene)
         self.window = uiWindow
-        uiWindow.rootViewController = ViewController()
+        uiWindow.rootViewController = HomeViewController()
         
         self.window?.makeKeyAndVisible()
         
