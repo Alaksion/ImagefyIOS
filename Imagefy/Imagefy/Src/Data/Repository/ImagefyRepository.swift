@@ -10,7 +10,7 @@ import Foundation
 struct ImagefyRepository: ImagefyRepositoryProtocol {
     private let dataSource: ImagefyRemoteDataSourceProtocol
     
-    init(_ dataSource: ImagefyRemoteDataSource) {
+    init(_ dataSource: ImagefyRemoteDataSourceProtocol) {
         self.dataSource = dataSource
     }
     

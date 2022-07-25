@@ -7,32 +7,28 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate, PhotoCellDelegate {
+        
+    private let homeViewModel: HomeViewModel
+    var coordinator: CoordinatorProtocol?
     
-    func onResponse() {
-        DispatchQueue.main.async {
-            self.homeView.PhotosTable.reloadData()
-        }
+    init() {
+        self.homeViewModel = ApplicationContainer.instance.injectHomeViewModel()
+        super.init(nibName: nil, bundle: nil)
     }
     
-    func onError(error: RequestError) {
-        print(error)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    private let viewModel = HomeViewModel(
-        ImagefyRepository(
-            ImagefyRemoteDataSource()
-        )
-    )
     
     private let homeView = HomeView()
-    private let imageloader = DefaultImageLoader()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        viewModel.delegate = self
-        viewModel.getPhotos()
+        homeViewModel.delegate = self
+        homeViewModel.getPhotos()
     }
     
     private func setUpViews() {
@@ -42,13 +38,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeView.PhotosTable.register(PhotoCell.self, forCellReuseIdentifier: "photoCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
 }
 
 extension HomeViewController {
  
     func numberOfSections(in tableView: UITableView) -> Int {
         // #1 Cria uma seção para cada item
-        return viewModel.photos.count
+        return homeViewModel.photos.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,8 +77,9 @@ extension HomeViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoCell
-        let data = viewModel.photos[indexPath.section]
+        let data = homeViewModel.photos[indexPath.section]
         cell.data = data
+        cell.delegate = self
         return cell
     }
 
@@ -84,9 +91,23 @@ extension HomeViewController {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // Notifica o ViewModel para chamar a próxima página quando chegar no penúltimo cell
-        if indexPath.row == viewModel.photos.count - 1 {
-            viewModel.getPhotos()
+        if indexPath.row == homeViewModel.photos.count - 1 {
+            homeViewModel.getPhotos()
         }
+    }
+    
+    func onResponse() {
+        DispatchQueue.main.async {
+            self.homeView.PhotosTable.reloadData()
+        }
+    }
+    
+    func onError(error: RequestError) {
+        print(error)
+    }
+    
+    func photoCell(clickedUsername: String) {
+        coordinator?.goToAuthor()
     }
     
 }

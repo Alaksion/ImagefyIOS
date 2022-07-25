@@ -10,6 +10,8 @@ import UIKit
 
 class PhotoCell: UITableViewCell {
     
+    var delegate: PhotoCellDelegate?
+    
     var data: FeedPhoto? {
         didSet {
             guard let photoData = data else { return }
@@ -60,17 +62,27 @@ class PhotoCell: UITableViewCell {
     }()
     
     private lazy var ProfileImage: UIImageView = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onProfileImageClick))
+        tapGesture.numberOfTapsRequired = 1
         let view = UIImageView()
         view.heightAnchor.constraint(equalToConstant: 40).isActive = true
         view.widthAnchor.constraint(equalToConstant: 40).isActive = true
         view.backgroundColor = .orange
         view.contentMode = .scaleAspectFill
-        
+        view.gestureRecognizers = [tapGesture]
+        view.isUserInteractionEnabled = true
         // Aplica o corner radius a todos os layers dessa view, dessa forma fica redondo depois de setar a imagem
         view.layer.cornerRadius = 20
         view.layer.masksToBounds = true
         return view
     }()
+    
+    @objc func onProfileImageClick() {
+        if let listener = delegate {
+            guard let userName = data?.authorName else { return }
+            listener.photoCell(clickedUsername: userName)
+        }
+    }
     
     private lazy var Names: UIStackView = {
         let view = UIStackView(arrangedSubviews: [Name, Username])
