@@ -10,10 +10,11 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate, PhotoCellDelegate {
         
     private let homeViewModel: HomeViewModel
-    var coordinator: CoordinatorProtocol?
+    private let coordinator: CoordinatorProtocol
     
-    init() {
-        self.homeViewModel = ApplicationContainer.instance.injectHomeViewModel()
+    init(viewModel: HomeViewModel, navigator: CoordinatorProtocol) {
+        self.homeViewModel = viewModel
+        self.coordinator = navigator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -107,7 +108,7 @@ extension HomeViewController {
     }
     
     func photoCell(clickedUsername: String) {
-        coordinator?.goToAuthor()
+        coordinator.goToAuthor()
     }
     
 }

@@ -14,8 +14,8 @@ protocol CoordinatorProtocol {
 }
 
 final class ApplicationCoordinator: CoordinatorProtocol {
-    private let container = ApplicationContainer.instance
     
+    private let container = ApplicationContainer.instance
     private let controller: UINavigationController
     private let window: UIWindow
     
@@ -27,12 +27,15 @@ final class ApplicationCoordinator: CoordinatorProtocol {
     func start() {
         window.rootViewController = controller
         window.makeKeyAndVisible()
-        let startDestination = HomeViewController()
-        startDestination.coordinator = self
-        controller.pushViewController(
-            startDestination,
-            animated: true
+        startDestination()
+    }
+    
+    func startDestination() {
+        let destination = HomeViewController(
+            viewModel: container.injectHomeViewModel(),
+            navigator: self
         )
+        controller.pushViewController(destination, animated: true)
     }
     
     func goToAuthor() {

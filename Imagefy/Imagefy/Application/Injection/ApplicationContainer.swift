@@ -11,14 +11,14 @@ class ApplicationContainer {
     
     static let instance = ApplicationContainer()
     
+    private let repository: ImagefyRepositoryProtocol
+    private let dataSource: ImagefyRemoteDataSourceProtocol
+    private var homeViewModel: HomeViewModel?
+
     private init() {
         dataSource = ImagefyRemoteDataSource()
         repository = ImagefyRepository(dataSource)
     }
-    
-    private let repository: ImagefyRepositoryProtocol
-    private let dataSource: ImagefyRemoteDataSourceProtocol
-    private var homeViewModel: HomeViewModel?
     
     func injectHomeViewModel() -> HomeViewModel {
         if let viewModel = homeViewModel {
