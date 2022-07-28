@@ -8,6 +8,7 @@
 import Foundation
 
 struct ImagefyRepository: ImagefyRepositoryProtocol {
+    
     private let dataSource: ImagefyRemoteDataSourceProtocol
     
     init(_ dataSource: ImagefyRemoteDataSourceProtocol) {
@@ -19,6 +20,16 @@ struct ImagefyRepository: ImagefyRepositoryProtocol {
         switch response {
         case .success(let data):
             return .success(data.map { photo in photo.mapToFeedPhoto()})
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
+    func getUserProfile(username: String) async -> Result<UserProfile, RequestError> {
+        let response = await dataSource.getUserProfile(username: username)
+        switch response {
+        case .success(let data):
+            return .success(UserProfile(from: data))
         case .failure(let error):
             return .failure(error)
         }

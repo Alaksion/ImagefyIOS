@@ -9,16 +9,14 @@ import Foundation
 
 protocol HttpClient {
     func sendRequest<T: Decodable>(
-        endpoint: EndpointProtocol,
-        responseModel: T.Type
+        endpoint: EndpointProtocol
     ) async -> Result<T, RequestError>
 }
 
 extension HttpClient {
     
     func sendRequest<T>(
-        endpoint: EndpointProtocol,
-        responseModel: T.Type
+        endpoint: EndpointProtocol
     ) async -> Result<T, RequestError> where T : Decodable {
         
         do {
