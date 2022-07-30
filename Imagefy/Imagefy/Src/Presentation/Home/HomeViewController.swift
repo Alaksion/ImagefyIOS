@@ -108,7 +108,7 @@ extension HomeViewController {
     }
     
     func photoCell(clickedUsername: String) {
-        coordinator.goToAuthor()
+        coordinator.goToAuthor(withName: clickedUsername)
     }
     
 }

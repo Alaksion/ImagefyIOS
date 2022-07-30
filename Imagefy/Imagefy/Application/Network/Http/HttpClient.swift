@@ -35,7 +35,7 @@ extension HttpClient {
     
     private func buildUrlComponent(from endpoint: EndpointProtocol) throws -> URLComponents {
         guard var urlComponent = URLComponents(string: endpoint.baseURL + endpoint.path) else {
-            throw RequestError.invalidURL
+            throw RequestError.invalidURL(url: "\(endpoint.baseURL)\(endpoint.path)")
         }
         
         var queries : [URLQueryItem] = []
@@ -53,7 +53,7 @@ extension HttpClient {
     ) throws -> URLRequest {
         
         guard let url = component.url else {
-            throw RequestError.invalidURL
+            throw RequestError.invalidURL(url: component.url?.absoluteURL.absoluteString ?? "Url is Null")
         }
         
         var request = URLRequest(url: url)

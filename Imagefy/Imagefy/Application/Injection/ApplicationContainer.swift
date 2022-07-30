@@ -29,4 +29,8 @@ class ApplicationContainer {
         return newViewModel
     }
     
+    func injectAuthorViewModel() -> AuthorProfileViewModel {
+        return AuthorProfileViewModel(repository: repository)
+    }
+    
 }

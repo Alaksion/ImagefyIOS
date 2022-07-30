@@ -54,7 +54,7 @@ class PhotoCell: UITableViewCell {
     private lazy var Header: UIStackView = {
         let view = UIStackView(arrangedSubviews: [ProfileImage, Names])
         view.axis = .horizontal
-        view.spacing = 5
+        view.spacing = 10
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         view.alignment = .center
@@ -68,7 +68,7 @@ class PhotoCell: UITableViewCell {
         view.heightAnchor.constraint(equalToConstant: 40).isActive = true
         view.widthAnchor.constraint(equalToConstant: 40).isActive = true
         view.backgroundColor = .orange
-        view.contentMode = .scaleAspectFill
+        view.contentMode = .center
         view.gestureRecognizers = [tapGesture]
         view.isUserInteractionEnabled = true
         // Aplica o corner radius a todos os layers dessa view, dessa forma fica redondo depois de setar a imagem
@@ -79,7 +79,7 @@ class PhotoCell: UITableViewCell {
     
     @objc func onProfileImageClick() {
         if let listener = delegate {
-            guard let userName = data?.authorName else { return }
+            guard let userName = data?.authorUsername else { return }
             listener.photoCell(clickedUsername: userName)
         }
     }

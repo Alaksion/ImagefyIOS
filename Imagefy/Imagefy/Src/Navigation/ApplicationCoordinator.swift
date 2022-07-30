@@ -10,7 +10,7 @@ import UIKit
 
 protocol CoordinatorProtocol {
     func start()
-    func goToAuthor()
+    func goToAuthor(withName name: String)
 }
 
 final class ApplicationCoordinator: CoordinatorProtocol {
@@ -38,8 +38,14 @@ final class ApplicationCoordinator: CoordinatorProtocol {
         controller.pushViewController(destination, animated: true)
     }
     
-    func goToAuthor() {
-        controller.pushViewController(AuthorProfileViewController(), animated: true)
+    func goToAuthor(withName name: String) {
+        controller.pushViewController(
+            AuthorProfileViewController(
+                model: container.injectAuthorViewModel(),
+                authorName: name
+            ),
+            animated: true
+        )
     }
     
 }

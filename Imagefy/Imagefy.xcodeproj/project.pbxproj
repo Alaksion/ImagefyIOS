@@ -30,6 +30,8 @@
 		E549921F28930E5E00EA4271 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549921E28930E5E00EA4271 /* UserProfile.swift */; };
 		E549922228930EAF00EA4271 /* UserProfileLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549922128930EAF00EA4271 /* UserProfileLinks.swift */; };
 		E5499225289314BA00EA4271 /* UserProfileMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5499224289314BA00EA4271 /* UserProfileMapper.swift */; };
+		E549922828949DED00EA4271 /* ProfileHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549922728949DED00EA4271 /* ProfileHeaderItem.swift */; };
+		E549922B2894A22400EA4271 /* AuthorProfileVmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549922A2894A22400EA4271 /* AuthorProfileVmDelegate.swift */; };
 		E5872616288F5D5D00A3CE2C /* AuthorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872615288F5D5D00A3CE2C /* AuthorProfileViewController.swift */; };
 		E5872618288F5D7B00A3CE2C /* AuthorProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */; };
 		E587261A288F5D8F00A3CE2C /* AuthorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */; };
@@ -70,6 +72,8 @@
 		E549921E28930E5E00EA4271 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E549922128930EAF00EA4271 /* UserProfileLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinks.swift; sourceTree = "<group>"; };
 		E5499224289314BA00EA4271 /* UserProfileMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMapper.swift; sourceTree = "<group>"; };
+		E549922728949DED00EA4271 /* ProfileHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderItem.swift; sourceTree = "<group>"; };
+		E549922A2894A22400EA4271 /* AuthorProfileVmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileVmDelegate.swift; sourceTree = "<group>"; };
 		E5872615288F5D5D00A3CE2C /* AuthorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewController.swift; sourceTree = "<group>"; };
 		E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewModel.swift; sourceTree = "<group>"; };
 		E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileView.swift; sourceTree = "<group>"; };
@@ -300,12 +304,22 @@
 			path = Mappers;
 			sourceTree = "<group>";
 		};
+		E549922628949DD600EA4271 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E549922728949DED00EA4271 /* ProfileHeaderItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E5872614288F5D3F00A3CE2C /* AuthorProfile */ = {
 			isa = PBXGroup;
 			children = (
+				E549922628949DD600EA4271 /* Components */,
 				E5872615288F5D5D00A3CE2C /* AuthorProfileViewController.swift */,
 				E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */,
 				E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */,
+				E549922A2894A22400EA4271 /* AuthorProfileVmDelegate.swift */,
 			);
 			path = AuthorProfile;
 			sourceTree = "<group>";
@@ -443,6 +457,7 @@
 			files = (
 				E527638E287A0AB5000E1F24 /* EndpointProtocol.swift in Sources */,
 				E52763A0287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift in Sources */,
+				E549922828949DED00EA4271 /* ProfileHeaderItem.swift in Sources */,
 				E549921F28930E5E00EA4271 /* UserProfile.swift in Sources */,
 				E549922228930EAF00EA4271 /* UserProfileLinks.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
@@ -470,6 +485,7 @@
 				E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */,
 				E587261A288F5D8F00A3CE2C /* AuthorProfileView.swift in Sources */,
 				E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */,
+				E549922B2894A22400EA4271 /* AuthorProfileVmDelegate.swift in Sources */,
 				E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */,
 				E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */,
 				E5CC0316288F496D00E404B3 /* ApplicationCoordinator.swift in Sources */,

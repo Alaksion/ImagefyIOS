@@ -9,7 +9,7 @@ import Foundation
 
 enum RequestError: Error {
     case decode(error: Error)
-    case invalidURL
+    case invalidURL(url: String)
     case noResponse
     case unauthorized
     case serverError
