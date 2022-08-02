@@ -40,6 +40,7 @@ class AuthorProfileView: UIView {
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         view.spacing = 5
+        view.setCustomSpacing(10, after: AuthorBio)
         return view
     }()
     
