@@ -19,42 +19,32 @@ class UserProfileMapper {
             followersCount: data.followersCount,
             followingCount: data.followingCount,
             postsCount: data.totalPhotos,
-            links: buildUserProfileLinks(from: data),
-            profileImageUrl: data.imageUrls.medium
+            profileImageUrl: data.imageUrls.medium,
+            instagramLink: buildSocialMediaLink(from: data.instagramUsername, withPrefix: "insta"),
+            twitterLink: buildSocialMediaLink(from: data.twitterUsername, withPrefix: "twitter"),
+            portfolioLink: buildPortfolioLink(from: data.portfolioUrl)
         )
     }
     
-    private static func buildUserProfileLinks(from response: UserProfileResponse) -> [UserProfileLinks] {
-        var links : [UserProfileLinks] = []
-        
-        if let instagram = response.instagramUsername {
-            let profile = UserProfileLinks(
-                type: .instagram,
-                label: instagram,
-                url: ""
-            )
-            links.append(profile)
-        }
-        
-        if let twitter = response.twitterUsername {
-            let profile = UserProfileLinks(
-                type: .twitter,
-                label: twitter,
-                url: ""
-            )
-            links.append(profile)
-        }
-        
-        if let portfolio = response.portfolioUrl {
-            let profile = UserProfileLinks(
-                type: .other,
-                label: "Portfolio",
-                url: portfolio
-            )
-            links.append(profile)
-        }
-        
-        return links
-        
+    private static func buildPortfolioLink(from url: String?) -> UserProfileLink? {
+        guard let safeUrl = url else { return nil }
+        return UserProfileLink(
+            type: .other,
+            label: "Portfolio",
+            url: safeUrl
+        )
     }
+    
+    private static func buildSocialMediaLink(
+        from username: String?,
+        withPrefix: String
+    ) -> UserProfileLink? {
+        guard let safeUsername = username else { return nil }
+        return UserProfileLink(
+            type: .instagram,
+            label: safeUsername,
+            url: withPrefix+safeUsername
+        )
+    }
+    
 }

@@ -14,8 +14,10 @@ struct UserProfile {
     let followersCount: Int
     let followingCount: Int
     let postsCount: Int
-    let links: [UserProfileLinks]
     let profileImageUrl: String
+    let instagramLink: UserProfileLink?
+    let twitterLink: UserProfileLink?
+    let portfolioLink: UserProfileLink?
 }
 
 extension UserProfile {

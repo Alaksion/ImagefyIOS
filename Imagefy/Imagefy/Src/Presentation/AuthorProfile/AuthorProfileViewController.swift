@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate {
+class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, ProfileLinkItemDelegate {
     
     private let authorViewModel: AuthorProfileViewModel
     private let authorUserName: String
@@ -26,6 +26,10 @@ class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate {
     
     override func viewDidLoad() {
         self.view = contentView
+        contentView.Twitter.delegate = self
+        contentView.InstagramLink.delegate = self
+        contentView.Portfolio.delegate = self
+        
         authorViewModel.delegate = self
         authorViewModel.getAuthorProfile(with: authorUserName)
     }
@@ -42,6 +46,10 @@ extension AuthorProfileViewController {
         DispatchQueue.main.async {
             self.contentView.data = data
         }
+    }
+    
+    func openUrl(destination: String) {
+        print(destination)
     }
     
 }

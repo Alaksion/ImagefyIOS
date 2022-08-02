@@ -67,8 +67,6 @@ class PhotoCell: UITableViewCell {
         let view = UIImageView()
         view.heightAnchor.constraint(equalToConstant: 40).isActive = true
         view.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        view.backgroundColor = .orange
-        view.contentMode = .center
         view.gestureRecognizers = [tapGesture]
         view.isUserInteractionEnabled = true
         // Aplica o corner radius a todos os layers dessa view, dessa forma fica redondo depois de setar a imagem

@@ -13,7 +13,7 @@ enum UserProfileLinkType {
     case other
 }
 
-struct UserProfileLinks {
+struct UserProfileLink {
     let type: UserProfileLinkType
     let label: String
     let url: String

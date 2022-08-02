@@ -19,6 +19,9 @@ class AuthorProfileView: UIView {
             FollowersCount.data = ProfileHeaderItemData(label: "Followers", value: String(profileData.followersCount))
             AuthorName.text = profileData.name
             AuthorBio.text = profileData.bio
+            setProfileLink(link: profileData.instagramLink)
+            setProfileLink(link: profileData.twitterLink)
+            setProfileLink(link: profileData.portfolioLink)
         }
     }
     
@@ -31,24 +34,8 @@ class AuthorProfileView: UIView {
         super.init(coder: coder)
     }
     
-    private func setUpViews() {
-        self.addSubview(Content)
-        self.backgroundColor = .white
-        NSLayoutConstraint.activate(
-            [
-                Content.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-                Content.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-                Content.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                Content.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-            ]
-        )
-        
-        Content.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    
     private lazy var Content: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [Header, AuthorName, AuthorBio ,UIView()])
+        let view = UIStackView(arrangedSubviews: [Header, AuthorName, AuthorBio, Links, UIView()])
         view.axis = .vertical
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
@@ -82,6 +69,7 @@ class AuthorProfileView: UIView {
     private lazy var AuthorBio: UILabel = {
         let view = UILabel()
         view.font = UIFont.systemFont(ofSize: 16)
+        view.numberOfLines = 50
         return view
     }()
     
@@ -89,4 +77,49 @@ class AuthorProfileView: UIView {
     private lazy var FollowersCount = ProfileHeaderItem()
     private lazy var FollowingCount = ProfileHeaderItem()
     
+    private lazy var Links: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 5
+        return view
+    }()
+    lazy var InstagramLink = ProfileLinkItem()
+    lazy var Twitter = ProfileLinkItem()
+    lazy var Portfolio = ProfileLinkItem()
+    
+}
+
+extension AuthorProfileView {
+    
+    private func setUpViews() {
+        self.addSubview(Content)
+        self.backgroundColor = .white
+        NSLayoutConstraint.activate(
+            [
+                Content.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+                Content.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+                Content.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+                Content.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            ]
+        )
+        
+        Content.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setProfileLink(link: UserProfileLink?) {
+        guard let safeLink = link else { return }
+        
+        switch safeLink.type {
+        case .instagram:
+            InstagramLink.data = safeLink
+            Links.addArrangedSubview(InstagramLink)
+        case .twitter:
+            Twitter.data = safeLink
+            Links.addArrangedSubview(Twitter)
+        case .other:
+            Portfolio.data = safeLink
+            Links.addArrangedSubview(Portfolio)
+        }
+    }
+
 }
