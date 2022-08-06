@@ -31,9 +31,6 @@ class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, P
     
     override func viewDidLoad() {
         self.view = contentView
-        contentView.Twitter.delegate = self
-        contentView.InstagramLink.delegate = self
-        contentView.Portfolio.delegate = self
         
         authorViewModel.delegate = self
         authorViewModel.getAuthorProfile(with: authorUserName)
