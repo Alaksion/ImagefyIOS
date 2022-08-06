@@ -12,6 +12,6 @@ enum RequestError: Error {
     case invalidURL(url: String)
     case noResponse
     case unauthorized
-    case serverError
+    case serverError(statusCode: Int)
     case unknown
 }

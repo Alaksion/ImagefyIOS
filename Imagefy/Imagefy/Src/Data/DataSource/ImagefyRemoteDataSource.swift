@@ -10,6 +10,7 @@ import Foundation
 protocol ImagefyRemoteDataSourceProtocol {
     func listPhotos(page: Int) async -> Result<[FeedPhotoResponse], RequestError>
     func getUserProfile(username: String) async -> Result<UserProfileResponse, RequestError>
+    func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhotoResponse], RequestError>
 }
 
 struct ImagefyRemoteDataSource: ImagefyRemoteDataSourceProtocol, HttpClient {
@@ -23,6 +24,12 @@ struct ImagefyRemoteDataSource: ImagefyRemoteDataSourceProtocol, HttpClient {
     func listPhotos(page: Int) async -> Result<[FeedPhotoResponse], RequestError> {
         return await sendRequest(
             endpoint: ImagefyService.listPhotos(page: page)
+        )
+    }
+    
+    func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhotoResponse], RequestError> {
+        return await sendRequest(
+            endpoint: ImagefyService.getUserPhotos(username: username, page: page)
         )
     }
     

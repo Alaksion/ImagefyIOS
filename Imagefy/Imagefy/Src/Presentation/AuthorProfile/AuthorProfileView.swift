@@ -35,12 +35,9 @@ class AuthorProfileView: UIView {
     }
     
     private lazy var Content: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [Header, AuthorName, AuthorBio, Links, UIView()])
+        let view = UIStackView(arrangedSubviews: [Header, UserInfo, AuthorPhotos])
         view.axis = .vertical
-        view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         view.spacing = 5
-        view.setCustomSpacing(10, after: AuthorBio)
         return view
     }()
     
@@ -49,6 +46,8 @@ class AuthorProfileView: UIView {
         view.axis = .horizontal
         view.alignment = .center
         view.distribution = .fillEqually
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         return view
     }()
     
@@ -58,6 +57,15 @@ class AuthorProfileView: UIView {
         view.widthAnchor.constraint(equalToConstant: 100).isActive = true
         view.layer.cornerRadius = 50
         view.layer.masksToBounds = true
+        return view
+    }()
+    
+    private lazy var UserInfo: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [AuthorName, AuthorBio, Links])
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        view.axis = .vertical
+        view.spacing = 10
         return view
     }()
     
@@ -87,6 +95,13 @@ class AuthorProfileView: UIView {
     lazy var InstagramLink = ProfileLinkItem()
     lazy var Twitter = ProfileLinkItem()
     lazy var Portfolio = ProfileLinkItem()
+    
+    lazy var AuthorPhotos: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let view = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        view.register(AuthorPhotoCell.self, forCellWithReuseIdentifier: AuthorPhotoCell.cellId)
+        return view
+    }()
     
 }
 

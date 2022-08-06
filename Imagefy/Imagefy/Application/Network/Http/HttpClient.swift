@@ -59,7 +59,7 @@ extension HttpClient {
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = endpoint.headers
         request.httpMethod = endpoint.method.rawValue
-        
+    
         return request
     }
     
@@ -82,7 +82,7 @@ extension HttpClient {
         case 401:
             throw RequestError.unauthorized
         default:
-            throw RequestError.serverError
+            throw RequestError.serverError(statusCode: responseData.statusCode)
         }
     }
     

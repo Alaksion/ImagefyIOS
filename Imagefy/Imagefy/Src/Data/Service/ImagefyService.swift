@@ -10,6 +10,7 @@ import Foundation
 enum ImagefyService {
     case listPhotos(page: Int)
     case getUserProfile(username: String)
+    case getUserPhotos(username: String, page: Int)
 }
 
 extension ImagefyService : EndpointProtocol {
@@ -18,6 +19,8 @@ extension ImagefyService : EndpointProtocol {
         case .listPhotos:
             return HTTPMethod.get
         case .getUserProfile:
+            return HTTPMethod.get
+        case .getUserPhotos:
             return HTTPMethod.get
         }
     }
@@ -28,6 +31,8 @@ extension ImagefyService : EndpointProtocol {
             return "photos"
         case .getUserProfile(let userName):
             return "users/\(userName)"
+        case .getUserPhotos(let username, _):
+            return "users/\(username)/photos/"
         }
     }
     
@@ -43,6 +48,8 @@ extension ImagefyService : EndpointProtocol {
             return ["page" : String(page)]
         case .getUserProfile:
             return [:]
+        case .getUserPhotos(_, let page):
+            return ["page" : String(page)]
         }
     }
     

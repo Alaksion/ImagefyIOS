@@ -13,4 +13,6 @@ protocol ImagefyRepositoryProtocol {
     
     func getUserProfile(username: String) async -> Result<UserProfile, RequestError>
     
+    func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhoto], RequestError>
+    
 }

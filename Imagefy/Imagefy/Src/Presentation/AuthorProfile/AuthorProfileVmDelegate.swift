@@ -10,4 +10,5 @@ import Foundation
 protocol AuthorProfileVmDelegate {
     func onAuthorProfileResponse(data: UserProfile)
     func onAuthorProfileError(error: RequestError)
+    func onAuthorPhotosResponse()
 }
