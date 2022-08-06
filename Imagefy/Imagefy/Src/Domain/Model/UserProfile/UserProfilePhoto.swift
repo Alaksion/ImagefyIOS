@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserProfilePhoto {
     let url: String
-    let color: String
+    let color: UIColor
 }

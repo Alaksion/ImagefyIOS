@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserProfilePhotoResponse: Decodable {
     let id: String
@@ -25,7 +26,7 @@ extension UserProfilePhotoResponse {
     func mapToUserPhoto() -> UserProfilePhoto {
         return UserProfilePhoto(
             url: self.urls.thumb,
-            color: self.color
+            color: .systemGray
         )
     }
 }

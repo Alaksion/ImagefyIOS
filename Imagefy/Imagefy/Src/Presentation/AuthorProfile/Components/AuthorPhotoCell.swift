@@ -31,6 +31,7 @@ class AuthorPhotoCell: UICollectionViewCell {
         didSet {
             guard let data = authorPhoto else { return }
             Photo.loadImage(from: data.url)
+            Photo.backgroundColor = data.color
         }
     }
     
