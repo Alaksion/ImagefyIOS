@@ -20,6 +20,10 @@ class AuthorProfileViewModel {
     var photos: [UserProfilePhoto] = []
     private var page = 1
     
+    private var isPaginationEnded = false
+    
+    private var isPhotosLoading = false
+    
     func getAuthorProfile(with username: String) {
         Task {
             let response = await repository.getUserProfile(username: username)
@@ -36,15 +40,30 @@ class AuthorProfileViewModel {
         with username: String
     ) {
         Task {
-            let response = await repository.getUserPhotos(username: username, page: self.page)
-            switch response {
-            case .success(let data):
-                photos.append(contentsOf: data)
-                delegate?.onAuthorPhotosResponse()
-            case .failure (let error):
-                debugPrint(error)
+            if(!isPaginationEnded && !isPhotosLoading) {
+                isPhotosLoading = true
+                let response = await repository.getUserPhotos(username: username, page: self.page)
+                switch response {
+                case .success(let data):
+                    onProfilePhotosResponse(with: data)
+                case .failure (let error):
+                    debugPrint(error)
+                    isPhotosLoading = false
+                }
             }
         }
+    }
+    
+    private func onProfilePhotosResponse(with data: [UserProfilePhoto]) {
+        if data.isEmpty {
+            isPaginationEnded = true
+            return
+        }
+        
+        photos.append(contentsOf: data)
+        delegate?.onAuthorPhotosResponse()
+        isPhotosLoading = false
+        page += 1
     }
     
 }

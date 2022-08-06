@@ -56,6 +56,10 @@ extension AuthorProfileViewController {
         
         cell.authorPhoto = authorViewModel.photos[indexPath.item]
         
+        if indexPath.item == (authorViewModel.photos.count - 1) {
+            authorViewModel.getAuthorPhotos(with: self.authorUserName)
+        }
+        
         return cell
     }
     
