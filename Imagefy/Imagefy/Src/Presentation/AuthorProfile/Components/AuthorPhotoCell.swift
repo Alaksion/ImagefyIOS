@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorPhotoCell: UICollectionViewCell {
+final class AuthorPhotoCell: UICollectionViewCell {
     
     static let cellId = "author_photo_cell"
     

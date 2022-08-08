@@ -13,7 +13,7 @@ struct ProfileHeaderItemData {
     let value: String
 }
 
-class ProfileHeaderItem : UIView {
+final class ProfileHeaderItem : UIView {
     
     var data: ProfileHeaderItemData? {
         didSet {

@@ -41,8 +41,6 @@
 		E5872618288F5D7B00A3CE2C /* AuthorProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */; };
 		E587261A288F5D8F00A3CE2C /* AuthorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */; };
 		E587261D288F5F1600A3CE2C /* PhotoCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587261C288F5F1600A3CE2C /* PhotoCellDelegate.swift */; };
-		E59CF6B82898A3010073E367 /* ProfileLinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59CF6B72898A3010073E367 /* ProfileLinkItem.swift */; };
-		E59CF6BB2898A9600073E367 /* ProfileLinkItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59CF6BA2898A9600073E367 /* ProfileLinkItemDelegate.swift */; };
 		E59CF6C32898C98E0073E367 /* UserProfilePhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59CF6C22898C98E0073E367 /* UserProfilePhotoResponse.swift */; };
 		E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B23A2884646E0051A541 /* HomeView.swift */; };
 		E5CA5095289EED68007E22D8 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CA5094289EED68007E22D8 /* UserProfileHeader.swift */; };
@@ -93,8 +91,6 @@
 		E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewModel.swift; sourceTree = "<group>"; };
 		E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileView.swift; sourceTree = "<group>"; };
 		E587261C288F5F1600A3CE2C /* PhotoCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellDelegate.swift; sourceTree = "<group>"; };
-		E59CF6B72898A3010073E367 /* ProfileLinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLinkItem.swift; sourceTree = "<group>"; };
-		E59CF6BA2898A9600073E367 /* ProfileLinkItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLinkItemDelegate.swift; sourceTree = "<group>"; };
 		E59CF6C22898C98E0073E367 /* UserProfilePhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoResponse.swift; sourceTree = "<group>"; };
 		E5A7B23A2884646E0051A541 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E5CA5094289EED68007E22D8 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -348,7 +344,6 @@
 			children = (
 				E5CA5096289EEFD6007E22D8 /* UserInfo */,
 				E5CA5093289EED5A007E22D8 /* Header */,
-				E59CF6B92898A9420073E367 /* ProfileLink */,
 				E539A1CC289E1BA300F57BE3 /* AuthorPhotoCell.swift */,
 			);
 			path = Components;
@@ -374,15 +369,6 @@
 				E587261C288F5F1600A3CE2C /* PhotoCellDelegate.swift */,
 			);
 			path = PhotoCell;
-			sourceTree = "<group>";
-		};
-		E59CF6B92898A9420073E367 /* ProfileLink */ = {
-			isa = PBXGroup;
-			children = (
-				E59CF6B72898A3010073E367 /* ProfileLinkItem.swift */,
-				E59CF6BA2898A9600073E367 /* ProfileLinkItemDelegate.swift */,
-			);
-			path = ProfileLink;
 			sourceTree = "<group>";
 		};
 		E59CF6C12898C97E0073E367 /* UserProfilePhoto */ = {
@@ -570,7 +556,6 @@
 				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E5276393287A0C63000E1F24 /* RequestError.swift in Sources */,
 				E59CF6C32898C98E0073E367 /* UserProfilePhotoResponse.swift in Sources */,
-				E59CF6B82898A3010073E367 /* ProfileLinkItem.swift in Sources */,
 				E549921D28930CD200EA4271 /* UserProfileImagesResponse.swift in Sources */,
 				E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
@@ -579,7 +564,6 @@
 				E587261D288F5F1600A3CE2C /* PhotoCellDelegate.swift in Sources */,
 				E5872618288F5D7B00A3CE2C /* AuthorProfileViewModel.swift in Sources */,
 				E5CA5095289EED68007E22D8 /* UserProfileHeader.swift in Sources */,
-				E59CF6BB2898A9600073E367 /* ProfileLinkItemDelegate.swift in Sources */,
 				E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */,
 				E5237D3E28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift in Sources */,
 				E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */,

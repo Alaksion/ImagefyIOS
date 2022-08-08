@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApplicationContainer {
+final class ApplicationContainer {
     
     static let instance = ApplicationContainer()
     

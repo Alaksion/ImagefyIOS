@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorProfileView: UIView {
+final class AuthorProfileView: UIView {
     
     var data: UserProfile? {
         didSet {

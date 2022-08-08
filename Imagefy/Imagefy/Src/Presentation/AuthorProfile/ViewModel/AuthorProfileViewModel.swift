@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AuthorProfileViewModel {
+final class AuthorProfileViewModel {
     
     private let repository: ImagefyRepositoryProtocol
     

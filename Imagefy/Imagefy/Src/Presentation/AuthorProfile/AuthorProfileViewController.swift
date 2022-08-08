@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, ProfileLinkItemDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private let cellMargins: CGFloat = 2
     private var totalCellOffset: CGFloat {
@@ -90,10 +90,6 @@ extension AuthorProfileViewController {
         DispatchQueue.main.async {
             self.contentView.data = data
         }
-    }
-    
-    func openUrl(destination: String) {
-        print(destination)
     }
     
     func onAuthorPhotosResponse() {
