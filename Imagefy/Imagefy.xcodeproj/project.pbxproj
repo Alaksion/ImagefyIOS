@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522BFC728846B2D001F6AE9 /* PhotoCell.swift */; };
+		E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */; };
+		E5237D3E28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */; };
+		E5237D4128A1852C00D5B33B /* PhotoCellFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */; };
 		E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276370287A0946000E1F24 /* AppDelegate.swift */; };
 		E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276372287A0946000E1F24 /* SceneDelegate.swift */; };
 		E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276374287A0946000E1F24 /* HomeViewController.swift */; };
@@ -55,6 +58,9 @@
 
 /* Begin PBXFileReference section */
 		E522BFC728846B2D001F6AE9 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeader.swift; sourceTree = "<group>"; };
+		E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeaderDelegate.swift; sourceTree = "<group>"; };
+		E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellFooter.swift; sourceTree = "<group>"; };
 		E527636D287A0946000E1F24 /* Imagefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5276370287A0946000E1F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5276372287A0946000E1F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,23 @@
 				E5A7B23A2884646E0051A541 /* HomeView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E5237D3C28A1823C00D5B33B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */,
+				E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		E5237D3F28A1851C00D5B33B /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */,
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 		E5276364287A0946000E1F24 = {
@@ -345,6 +368,8 @@
 		E587261B288F5F0600A3CE2C /* PhotoCell */ = {
 			isa = PBXGroup;
 			children = (
+				E5237D3F28A1851C00D5B33B /* Footer */,
+				E5237D3C28A1823C00D5B33B /* Header */,
 				E522BFC728846B2D001F6AE9 /* PhotoCell.swift */,
 				E587261C288F5F1600A3CE2C /* PhotoCellDelegate.swift */,
 			);
@@ -549,16 +574,19 @@
 				E549921D28930CD200EA4271 /* UserProfileImagesResponse.swift in Sources */,
 				E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
+				E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */,
 				E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */,
 				E587261D288F5F1600A3CE2C /* PhotoCellDelegate.swift in Sources */,
 				E5872618288F5D7B00A3CE2C /* AuthorProfileViewModel.swift in Sources */,
 				E5CA5095289EED68007E22D8 /* UserProfileHeader.swift in Sources */,
 				E59CF6BB2898A9600073E367 /* ProfileLinkItemDelegate.swift in Sources */,
 				E52763AD287CBEA9000E1F24 /* HomeViewModel.swift in Sources */,
+				E5237D3E28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift in Sources */,
 				E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */,
 				E5CC030F288C6B8C00E404B3 /* UIImageView.swift in Sources */,
 				E5276396287A0CF8000E1F24 /* FeedPhotoResponse.swift in Sources */,
 				E587261A288F5D8F00A3CE2C /* AuthorProfileView.swift in Sources */,
+				E5237D4128A1852C00D5B33B /* PhotoCellFooter.swift in Sources */,
 				E527639D287CA947000E1F24 /* ImagefyService.swift in Sources */,
 				E539A1CD289E1BA300F57BE3 /* AuthorPhotoCell.swift in Sources */,
 				E549922B2894A22400EA4271 /* AuthorProfileVmDelegate.swift in Sources */,
