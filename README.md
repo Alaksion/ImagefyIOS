@@ -8,6 +8,8 @@ Imagefy is a sample app i made to study IOS development. It consists of an image
 ## TODO
 - [x] Home page with infinite pagination of posts
 - [x] User page containing user info and infinite pagination of the user's posts
+- [ ] Loading states/animations
 - [ ] Details page of a single post
 - [ ] Authentication
 - [ ] Like/Dislike
+- [ ] Tests
