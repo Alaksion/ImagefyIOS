@@ -11,6 +11,7 @@
 		E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */; };
 		E5237D3E28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */; };
 		E5237D4128A1852C00D5B33B /* PhotoCellFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */; };
+		E5237D5028A1A71300D5B33B /* ExampleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D4F28A1A71300D5B33B /* ExampleTest.swift */; };
 		E5276371287A0946000E1F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276370287A0946000E1F24 /* AppDelegate.swift */; };
 		E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276372287A0946000E1F24 /* SceneDelegate.swift */; };
 		E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5276374287A0946000E1F24 /* HomeViewController.swift */; };
@@ -52,13 +53,27 @@
 		E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0312288C7F8B00E404B3 /* UIImageLoader.swift */; };
 		E5CC0316288F496D00E404B3 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0315288F496D00E404B3 /* ApplicationCoordinator.swift */; };
 		E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */; };
+		E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */; };
+		E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5237D4A28A1A61200D5B33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5276365287A0946000E1F24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E527636C287A0946000E1F24;
+			remoteInfo = Imagefy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E522BFC728846B2D001F6AE9 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeader.swift; sourceTree = "<group>"; };
 		E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeaderDelegate.swift; sourceTree = "<group>"; };
 		E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellFooter.swift; sourceTree = "<group>"; };
+		E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagefyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5237D4F28A1A71300D5B33B /* ExampleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTest.swift; sourceTree = "<group>"; };
 		E527636D287A0946000E1F24 /* Imagefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5276370287A0946000E1F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5276372287A0946000E1F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,9 +117,18 @@
 		E5CC0312288C7F8B00E404B3 /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		E5CC0315288F496D00E404B3 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContainer.swift; sourceTree = "<group>"; };
+		E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryTest.swift; sourceTree = "<group>"; };
+		E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E5237D4328A1A61200D5B33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E527636A287A0946000E1F24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,10 +165,21 @@
 			path = Footer;
 			sourceTree = "<group>";
 		};
+		E5237D4728A1A61200D5B33B /* ImagefyTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA0E28A60B9C009FFA5C /* Mock */,
+				E5D4DA0D28A60B78009FFA5C /* Repository */,
+				E5237D4F28A1A71300D5B33B /* ExampleTest.swift */,
+			);
+			path = ImagefyTests;
+			sourceTree = "<group>";
+		};
 		E5276364287A0946000E1F24 = {
 			isa = PBXGroup;
 			children = (
 				E527636F287A0946000E1F24 /* Imagefy */,
+				E5237D4728A1A61200D5B33B /* ImagefyTests */,
 				E527636E287A0946000E1F24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				E527636D287A0946000E1F24 /* Imagefy.app */,
+				E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,9 +500,43 @@
 			path = Injection;
 			sourceTree = "<group>";
 		};
+		E5D4DA0D28A60B78009FFA5C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E5D4DA0E28A60B9C009FFA5C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E5237D4528A1A61200D5B33B /* ImagefyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5237D4C28A1A61200D5B33B /* Build configuration list for PBXNativeTarget "ImagefyTests" */;
+			buildPhases = (
+				E5237D4228A1A61200D5B33B /* Sources */,
+				E5237D4328A1A61200D5B33B /* Frameworks */,
+				E5237D4428A1A61200D5B33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5237D4B28A1A61200D5B33B /* PBXTargetDependency */,
+			);
+			name = ImagefyTests;
+			productName = ImagefyTests;
+			productReference = E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E527636C287A0946000E1F24 /* Imagefy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5276381287A0946000E1F24 /* Build configuration list for PBXNativeTarget "Imagefy" */;
@@ -494,6 +564,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					E5237D4528A1A61200D5B33B = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = E527636C287A0946000E1F24;
+					};
 					E527636C287A0946000E1F24 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -513,11 +587,19 @@
 			projectRoot = "";
 			targets = (
 				E527636C287A0946000E1F24 /* Imagefy */,
+				E5237D4528A1A61200D5B33B /* ImagefyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E5237D4428A1A61200D5B33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E527636B287A0946000E1F24 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -531,6 +613,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E5237D4228A1A61200D5B33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */,
+				E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */,
+				E5237D5028A1A71300D5B33B /* ExampleTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5276369287A0946000E1F24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +674,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E5237D4B28A1A61200D5B33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E527636C287A0946000E1F24 /* Imagefy */;
+			targetProxy = E5237D4A28A1A61200D5B33B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E5276376287A0946000E1F24 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -602,6 +702,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E5237D4D28A1A61200D5B33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H62BDWNNL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.alaksion.ImagefyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imagefy.app/Imagefy";
+			};
+			name = Debug;
+		};
+		E5237D4E28A1A61200D5B33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H62BDWNNL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.alaksion.ImagefyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imagefy.app/Imagefy";
+			};
+			name = Release;
+		};
 		E527637F287A0946000E1F24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -775,6 +911,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E5237D4C28A1A61200D5B33B /* Build configuration list for PBXNativeTarget "ImagefyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5237D4D28A1A61200D5B33B /* Debug */,
+				E5237D4E28A1A61200D5B33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E5276368287A0946000E1F24 /* Build configuration list for PBXProject "Imagefy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
