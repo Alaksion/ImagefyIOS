@@ -35,7 +35,7 @@ struct FeedPhotoResponse: Codable {
             authorUsername: self.user.username,
             id: self.id,
             createdAt: Date(),
-            color: UIColor.blue,
+            color: UIColor(hexString: self.color),
             likes: self.likes,
             description: self.description ?? "0",
             urls: self.urls.mapToPhotoUrls(),

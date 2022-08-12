@@ -16,6 +16,7 @@ final class PhotoCell: UITableViewCell {
         didSet {
             guard let photoData = data else { return }
             Photo.loadImage(from: photoData.urls.regular)
+            Photo.backgroundColor = photoData.color
             
             Header.data = PhotoCellHeaderData(
                 name: photoData.authorName,

@@ -55,6 +55,9 @@
 		E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */; };
 		E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */; };
 		E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */; };
+		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
+		E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */; };
+		E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1C28A6D788009FFA5C /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContainer.swift; sourceTree = "<group>"; };
 		E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryTest.swift; sourceTree = "<group>"; };
 		E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
+		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
+		E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTestData.swift; sourceTree = "<group>"; };
+		E5D4DA1C28A6D788009FFA5C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				E5CC030E288C6B8C00E404B3 /* UIImageView.swift */,
+				E5D4DA1C28A6D788009FFA5C /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,9 +518,27 @@
 		E5D4DA0E28A60B9C009FFA5C /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */,
+				E5D4DA1628A6D2E3009FFA5C /* Repository */,
+				E5D4DA1128A6D24A009FFA5C /* DataSource */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		E5D4DA1128A6D24A009FFA5C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		E5D4DA1628A6D2E3009FFA5C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */,
+				E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,6 +645,8 @@
 				E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */,
 				E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */,
 				E5237D5028A1A71300D5B33B /* ExampleTest.swift in Sources */,
+				E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */,
+				E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +678,7 @@
 				E549921D28930CD200EA4271 /* UserProfileImagesResponse.swift in Sources */,
 				E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
+				E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */,
 				E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */,
 				E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */,
 				E587261D288F5F1600A3CE2C /* PhotoCellDelegate.swift in Sources */,
