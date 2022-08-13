@@ -58,6 +58,7 @@
 		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
 		E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */; };
 		E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1C28A6D788009FFA5C /* UIColor.swift */; };
+		E5D4DA2E28A774C4009FFA5C /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA2D28A774C4009FFA5C /* SkeletonLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
 		E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTestData.swift; sourceTree = "<group>"; };
 		E5D4DA1C28A6D788009FFA5C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E5D4DA2D28A774C4009FFA5C /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 		E5276386287A096A000E1F24 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				E5D4DA2C28A774B6009FFA5C /* Animation */,
 				E5CC0314288F495D00E404B3 /* Navigation */,
 				E5276389287A0978000E1F24 /* Presentation */,
 				E5276388287A0975000E1F24 /* Domain */,
@@ -541,6 +544,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		E5D4DA2C28A774B6009FFA5C /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				E5D4DA2D28A774C4009FFA5C /* SkeletonLoadable.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -659,6 +670,7 @@
 				E549922828949DED00EA4271 /* ProfileHeaderItem.swift in Sources */,
 				E539A1CF289E1C6F00F57BE3 /* UserProfilePhoto.swift in Sources */,
 				E549921F28930E5E00EA4271 /* UserProfile.swift in Sources */,
+				E5D4DA2E28A774C4009FFA5C /* SkeletonLoadable.swift in Sources */,
 				E549922228930EAF00EA4271 /* UserProfileLink.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
 				E5CA5098289EEFE6007E22D8 /* ProfileUserInfo.swift in Sources */,

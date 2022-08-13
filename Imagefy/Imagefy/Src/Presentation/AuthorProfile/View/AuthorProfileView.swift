@@ -60,14 +60,12 @@ extension AuthorProfileView {
     private func setUpViews() {
         self.addSubview(Content)
         self.backgroundColor = .white
-        NSLayoutConstraint.activate(
-            [
+        NSLayoutConstraint.activate([
                 Content.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
                 Content.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
                 Content.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
                 Content.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-            ]
-        )
+        ])
         
         Content.translatesAutoresizingMaskIntoConstraints = false
     }

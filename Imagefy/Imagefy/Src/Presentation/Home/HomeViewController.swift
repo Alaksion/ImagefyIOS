@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate, PhotoCellDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate, PhotoCellDelegate, SkeletonLoadable {
         
     private let homeViewModel: HomeViewModel
     private let coordinator: CoordinatorProtocol
@@ -23,7 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private let homeView = HomeView()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
