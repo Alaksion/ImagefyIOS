@@ -16,44 +16,41 @@ struct ImagefyRepository: ImagefyRepositoryProtocol {
     }
     
     func getPhotoDetails(withId id: String) async -> Result<PhotoDetails, RequestError> {
-        let response = await dataSource.getPhoto(withId: id)
-        switch response {
-        case .success(let data):
-            return .success(data.mapToDomain())
-        case .failure(let error):
-            return .failure(error)
+        return handleResponse(
+            result: await dataSource.getPhoto(withId: id)
+        ) { response in
+            response.mapToDomain()
         }
     }
     
     func getFeedPhotos(page: Int) async -> Result<[FeedPhoto], RequestError> {
-        let response = await dataSource.listPhotos(page: page)
-        switch response {
-        case .success(let data):
-            return .success(data.map { photo in photo.mapToFeedPhoto()})
-        case .failure(let error):
-            return .failure(error)
-        }
+        return handleResponse(
+            result: await dataSource.listPhotos(page: page)) { response in
+                response.map { photo in
+                    photo.mapToFeedPhoto()
+                }
+            }
     }
     
     func getUserProfile(username: String) async -> Result<UserProfile, RequestError> {
-        let response = await dataSource.getUserProfile(username: username)
-        switch response {
-        case .success(let data):
-            return .success(UserProfile(from: data))
-        case .failure(let error):
-            return .failure(error)
+        return handleResponse(
+            result: await dataSource.getUserProfile(
+                username: username)
+        ) { response in
+            UserProfile(from: response)
         }
     }
     
     func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhoto], RequestError> {
-        let response = await dataSource.getUserPhotos(username: username, page: page)
-        switch response {
-        case .success(let data):
-            return .success(data.map { photo in
+        return handleResponse(
+            result: await dataSource.getUserPhotos(
+                username: username,
+                page: page
+            )
+        ) { response in
+            response.map { photo in
                 photo.mapToUserPhoto()
-            })
-        case .failure(let error):
-            return .failure(error)
+            }
         }
     }
     
