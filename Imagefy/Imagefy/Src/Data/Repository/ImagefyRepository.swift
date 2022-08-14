@@ -15,6 +15,16 @@ struct ImagefyRepository: ImagefyRepositoryProtocol {
         self.dataSource = dataSource
     }
     
+    func getPhotoDetails(withId id: String) async -> Result<PhotoDetails, RequestError> {
+        let response = await dataSource.getPhoto(withId: id)
+        switch response {
+        case .success(let data):
+            return .success(data.mapToDomain())
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
     func getFeedPhotos(page: Int) async -> Result<[FeedPhoto], RequestError> {
         let response = await dataSource.listPhotos(page: page)
         switch response {

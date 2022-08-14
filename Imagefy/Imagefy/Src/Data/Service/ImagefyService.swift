@@ -11,6 +11,7 @@ enum ImagefyService {
     case listPhotos(page: Int)
     case getUserProfile(username: String)
     case getUserPhotos(username: String, page: Int)
+    case getPhoto(withId: String)
 }
 
 extension ImagefyService : EndpointProtocol {
@@ -21,6 +22,8 @@ extension ImagefyService : EndpointProtocol {
         case .getUserProfile:
             return HTTPMethod.get
         case .getUserPhotos:
+            return HTTPMethod.get
+        case .getPhoto:
             return HTTPMethod.get
         }
     }
@@ -33,6 +36,8 @@ extension ImagefyService : EndpointProtocol {
             return "users/\(userName)"
         case .getUserPhotos(let username, _):
             return "users/\(username)/photos/"
+        case .getPhoto(let id):
+            return "photos/\(id)"
         }
     }
     
@@ -50,6 +55,8 @@ extension ImagefyService : EndpointProtocol {
             return [:]
         case .getUserPhotos(_, let page):
             return ["page" : String(page)]
+        case .getPhoto:
+            return [:]
         }
     }
     

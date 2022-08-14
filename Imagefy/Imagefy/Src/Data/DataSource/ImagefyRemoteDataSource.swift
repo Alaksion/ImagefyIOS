@@ -11,9 +11,14 @@ protocol ImagefyRemoteDataSourceProtocol {
     func listPhotos(page: Int) async -> Result<[FeedPhotoResponse], RequestError>
     func getUserProfile(username: String) async -> Result<UserProfileResponse, RequestError>
     func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhotoResponse], RequestError>
+    func getPhoto(withId id: String) async -> Result<PhotoDetailsResponse, RequestError>
 }
 
 struct ImagefyRemoteDataSource: ImagefyRemoteDataSourceProtocol, HttpClient {
+    
+    func getPhoto(withId id: String) async -> Result<PhotoDetailsResponse, RequestError> {
+        return await sendRequest(endpoint: ImagefyService.getPhoto(withId: id))
+    }
     
     func getUserProfile(username: String) async -> Result<UserProfileResponse, RequestError> {
         return await sendRequest(
