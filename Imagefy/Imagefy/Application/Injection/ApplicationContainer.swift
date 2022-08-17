@@ -33,4 +33,8 @@ final class ApplicationContainer {
         return AuthorProfileViewModel(repository: repository)
     }
     
+    func injectPostDetailsVm(postId: String) -> PostDetailsViewModel {
+        return PostDetailsViewModel(repository, forPostWithId: postId)
+    }
+    
 }

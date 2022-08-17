@@ -63,6 +63,10 @@
 		E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */; };
 		E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1C28A6D788009FFA5C /* UIColor.swift */; };
 		E5D4DA2E28A774C4009FFA5C /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA2D28A774C4009FFA5C /* SkeletonLoadable.swift */; };
+		E5EDB01428AD735000CC0C9D /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01328AD735000CC0C9D /* PostDetailsViewController.swift */; };
+		E5EDB01728AD736200CC0C9D /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01628AD736200CC0C9D /* PostDetailsView.swift */; };
+		E5EDB01A28AD756C00CC0C9D /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01928AD756C00CC0C9D /* PostDetailsViewModel.swift */; };
+		E5EDB01C28AD75D900CC0C9D /* PostDetailsVmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01B28AD75D900CC0C9D /* PostDetailsVmDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +139,10 @@
 		E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTestData.swift; sourceTree = "<group>"; };
 		E5D4DA1C28A6D788009FFA5C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E5D4DA2D28A774C4009FFA5C /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		E5EDB01328AD735000CC0C9D /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		E5EDB01628AD736200CC0C9D /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
+		E5EDB01928AD756C00CC0C9D /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
+		E5EDB01B28AD75D900CC0C9D /* PostDetailsVmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsVmDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +286,7 @@
 		E5276389287A0978000E1F24 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E5EDB01228AD733B00CC0C9D /* PostDetails */,
 				E5872614288F5D3F00A3CE2C /* AuthorProfile */,
 				E527638A287A0A47000E1F24 /* Home */,
 			);
@@ -580,6 +589,33 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		E5EDB01228AD733B00CC0C9D /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E5EDB01828AD755D00CC0C9D /* ViewModel */,
+				E5EDB01528AD735300CC0C9D /* Components */,
+				E5EDB01328AD735000CC0C9D /* PostDetailsViewController.swift */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		E5EDB01528AD735300CC0C9D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5EDB01628AD736200CC0C9D /* PostDetailsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E5EDB01828AD755D00CC0C9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E5EDB01928AD756C00CC0C9D /* PostDetailsViewModel.swift */,
+				E5EDB01B28AD75D900CC0C9D /* PostDetailsVmDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -693,12 +729,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EDB01C28AD75D900CC0C9D /* PostDetailsVmDelegate.swift in Sources */,
 				E527638E287A0AB5000E1F24 /* EndpointProtocol.swift in Sources */,
 				E52763A0287CAB6A000E1F24 /* ImagefyRemoteDataSource.swift in Sources */,
+				E5EDB01428AD735000CC0C9D /* PostDetailsViewController.swift in Sources */,
 				E549922828949DED00EA4271 /* ProfileHeaderItem.swift in Sources */,
 				E539A1CF289E1C6F00F57BE3 /* UserProfilePhoto.swift in Sources */,
 				E549921F28930E5E00EA4271 /* UserProfile.swift in Sources */,
 				E550DE2228A8C8E6009C689B /* PhotoDetails.swift in Sources */,
+				E5EDB01728AD736200CC0C9D /* PostDetailsView.swift in Sources */,
 				E5D4DA2E28A774C4009FFA5C /* SkeletonLoadable.swift in Sources */,
 				E549922228930EAF00EA4271 /* UserProfileLink.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
@@ -716,6 +755,7 @@
 				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E5276393287A0C63000E1F24 /* RequestError.swift in Sources */,
 				E59CF6C32898C98E0073E367 /* UserProfilePhotoResponse.swift in Sources */,
+				E5EDB01A28AD756C00CC0C9D /* PostDetailsViewModel.swift in Sources */,
 				E549921D28930CD200EA4271 /* UserProfileImagesResponse.swift in Sources */,
 				E5CC0313288C7F8B00E404B3 /* UIImageLoader.swift in Sources */,
 				E5276390287A0ADB000E1F24 /* HttpMethod.swift in Sources */,
