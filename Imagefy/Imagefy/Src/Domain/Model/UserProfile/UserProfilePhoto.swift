@@ -11,4 +11,5 @@ import UIKit
 struct UserProfilePhoto {
     let url: String
     let color: UIColor
+    let id: String
 }

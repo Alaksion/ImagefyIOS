@@ -18,10 +18,12 @@ class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, U
     private let authorViewModel: AuthorProfileViewModel
     private let authorUserName: String
     private let contentView = AuthorProfileView()
+    private let navigator: ApplicationCoordinator
     
-    init(model: AuthorProfileViewModel, authorName: String) {
+    init(model: AuthorProfileViewModel, authorName: String, navigator: ApplicationCoordinator) {
         self.authorViewModel = model
         self.authorUserName = authorName
+        self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -78,6 +80,12 @@ extension AuthorProfileViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return self.cellMargins
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = self.authorViewModel.photos[indexPath.item]
+        navigator.goToPost(withId: data.id)
+    }
+    
 }
 
 extension AuthorProfileViewController {

@@ -26,7 +26,8 @@ extension UserProfilePhotoResponse {
     func mapToUserPhoto() -> UserProfilePhoto {
         return UserProfilePhoto(
             url: self.urls.thumb,
-            color: UIColor(hexString: self.color)
+            color: UIColor(hexString: self.color),
+            id: self.id
         )
     }
 }

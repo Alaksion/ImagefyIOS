@@ -11,6 +11,7 @@ import UIKit
 protocol CoordinatorProtocol {
     func start()
     func goToAuthor(withName name: String)
+    func goToPost(withId id: String)
 }
 
 final class ApplicationCoordinator: CoordinatorProtocol {
@@ -42,10 +43,20 @@ final class ApplicationCoordinator: CoordinatorProtocol {
         controller.pushViewController(
             AuthorProfileViewController(
                 model: container.injectAuthorViewModel(),
-                authorName: name
+                authorName: name,
+                navigator: self
             ),
             animated: true
         )
+    }
+    
+    func goToPost(withId id: String) {
+        let destination = PostDetailsViewController(
+            viewModel: container.injectPostDetailsVm(
+                postId: id
+            )
+        )
+        controller.pushViewController(destination, animated: true)
     }
     
 }

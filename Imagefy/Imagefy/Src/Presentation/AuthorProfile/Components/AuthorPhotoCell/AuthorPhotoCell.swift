@@ -46,5 +46,5 @@ final class AuthorPhotoCell: UICollectionViewCell {
         view.clipsToBounds = true
         return view
     }()
-    
+
 }

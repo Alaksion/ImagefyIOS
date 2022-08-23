@@ -37,7 +37,7 @@ final class PostDetailsViewController: UIViewController {
 extension PostDetailsViewController : PostDetailsVmDelegate {
     func onSuccess(data: PhotoDetails) {
         DispatchQueue.main.async {
-            debugPrint(data)
+            self.contentView.data = data
         }
     }
     
