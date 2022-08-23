@@ -61,7 +61,7 @@ final class AuthorProfileViewModel {
         }
         
         photos.append(contentsOf: data)
-        delegate?.onAuthorPhotosResponse()
+        delegate?.onAuthorPhotosResponse(data: self.photos)
         isPhotosLoading = false
         page += 1
     }

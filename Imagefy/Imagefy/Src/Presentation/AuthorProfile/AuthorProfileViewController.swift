@@ -8,12 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    private let cellMargins: CGFloat = 2
-    private var totalCellOffset: CGFloat {
-        cellMargins * 3
-    }
+class AuthorProfileViewController : UIViewController {
     
     private let authorViewModel: AuthorProfileViewModel
     private let authorUserName: String
@@ -33,62 +28,15 @@ class AuthorProfileViewController : UIViewController, AuthorProfileVmDelegate, U
     
     override func viewDidLoad() {
         self.view = contentView
-        
+        self.contentView.delegate = self
         authorViewModel.delegate = self
         authorViewModel.getAuthorProfile(with: authorUserName)
         authorViewModel.getAuthorPhotos(with: authorUserName)
-        
-        contentView.AuthorPhotos.delegate = self
-        contentView.AuthorPhotos.dataSource = self
     }
     
 }
 
-extension AuthorProfileViewController {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return authorViewModel.photos.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: AuthorPhotoCell.cellId,
-            for: indexPath
-        ) as! AuthorPhotoCell
-        
-        cell.authorPhoto = authorViewModel.photos[indexPath.item]
-        
-        if indexPath.item == (authorViewModel.photos.count - 1) {
-            authorViewModel.getAuthorPhotos(with: self.authorUserName)
-        }
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let estimatedWidth = (collectionView.frame.size.width - self.totalCellOffset) / 3
-        let height = estimatedWidth
-        return CGSize(width: estimatedWidth, height: height)
-    }
-    
-    // Spacing between rows of the collection view
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return self.cellMargins
-    }
-    
-    // Spacing between items of a row
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return self.cellMargins
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = self.authorViewModel.photos[indexPath.item]
-        navigator.goToPost(withId: data.id)
-    }
-    
-}
-
-extension AuthorProfileViewController {
+extension AuthorProfileViewController : AuthorProfileVmDelegate{
     
     func onAuthorProfileError(error: RequestError) {
         debugPrint(error)
@@ -100,11 +48,21 @@ extension AuthorProfileViewController {
         }
     }
     
-    func onAuthorPhotosResponse() {
+    func onAuthorPhotosResponse(data: [UserProfilePhoto]) {
         DispatchQueue.main.async {
-            self.contentView.AuthorPhotos.reloadData()
-            debugPrint("Photos loaded, now there are \(self.authorViewModel.photos.count) photos")
+            self.contentView.updatePhotos(newPhotos: data)
         }
     }
     
+}
+
+extension AuthorProfileViewController : AuthorProfileViewDelegate {
+    
+    func loadMorePhotos() {
+        self.authorViewModel.getAuthorPhotos(with: self.authorUserName)
+    }
+    
+    func onPhotoCellClick(withId id: String) {
+        self.navigator.goToPost(withId: id)
+    }
 }
