@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, SkeletonLoadable {
     
     private func setUpViews() {
         self.view = homeView
+        self.homeView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
