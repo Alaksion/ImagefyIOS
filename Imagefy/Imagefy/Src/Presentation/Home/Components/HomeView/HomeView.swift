@@ -42,7 +42,7 @@ final class HomeView : UIView {
     
 }
 
-private extension HomeView {
+extension HomeView {
     private func setUpViews() {
         self.addSubview(Content)
         self.backgroundColor = .white
@@ -53,6 +53,7 @@ private extension HomeView {
         
         PhotosTable.delegate = self
         PhotosTable.dataSource = self
+        PhotosTable.prefetchDataSource = self
     }
     
     func updatePhotos(newPhotos: [FeedPhoto]) {
@@ -87,12 +88,6 @@ extension HomeView : UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == photos.count - 1 {
-            delegate?.onReachEndOfList()
-        }
-    }
-    
 }
 
 extension HomeView: UITableViewDelegate {
@@ -111,4 +106,19 @@ extension HomeView: UITableViewDelegate {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
+}
+
+extension HomeView: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let unloadedCells = indexPaths.filter { index in
+            index.item >= photos.count - 1
+        }
+        
+        // If there are future cells being prepared to be displayed
+        if !unloadedCells.isEmpty {
+            delegate?.onReachEndOfList()
+        }
+    }
+    
 }
