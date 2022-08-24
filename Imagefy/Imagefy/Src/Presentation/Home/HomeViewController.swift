@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeViewModelDelegate, SkeletonLoadable {
+class HomeViewController: UIViewController, SkeletonLoadable {
         
     private let homeViewModel: HomeViewModel
     private let coordinator: CoordinatorProtocol
@@ -47,8 +47,20 @@ class HomeViewController: UIViewController, HomeViewModelDelegate, SkeletonLoada
     
 }
 
-extension HomeViewController {
+extension HomeViewController: HomeViewDelegate {
     
+    func onProfileHeaderClicked(withUsername username: String) {
+        coordinator.goToAuthor(withName: username)
+    }
+    
+    func onReachEndOfList() {
+        self.homeViewModel.getPhotos()
+    }
+    
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+ 
     func onResponse(photos: [FeedPhoto]) {
         DispatchQueue.main.async {
             self.homeView.updatePhotos(newPhotos: photos)
@@ -57,10 +69,6 @@ extension HomeViewController {
     
     func onError(error: RequestError) {
         print(error)
-    }
-    
-    func photoCell(clickedUsername: String) {
-        coordinator.goToAuthor(withName: clickedUsername)
     }
     
 }
