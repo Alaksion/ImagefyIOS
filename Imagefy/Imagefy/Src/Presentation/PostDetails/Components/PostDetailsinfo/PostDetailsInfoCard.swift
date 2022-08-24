@@ -56,7 +56,7 @@ final class PostDetailsInfoCard: UIView {
     
 }
 
-extension PostDetailsInfoCard {
+priavte extension PostDetailsInfoCard {
     
     private func setUpViews() {
         self.addSubview(Content)

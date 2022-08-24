@@ -66,7 +66,7 @@ final class AuthorProfileView: UIView {
     
 }
 
-extension AuthorProfileView {
+private extension AuthorProfileView {
     
     private func setUpViews() {
         self.addSubview(Content)

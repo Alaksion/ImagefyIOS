@@ -14,7 +14,7 @@ struct PhotoCellHeaderData {
     let profileImageUrl: String
 }
 
-class PhotoCellHeader: UIView {
+final class PhotoCellHeader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

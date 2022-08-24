@@ -58,7 +58,7 @@ final class PostDetailsRow : UIView {
     
 }
 
-extension PostDetailsRow {
+private extension PostDetailsRow {
     private func setUpViews() {
         self.addSubview(Content)
         NSLayoutConstraint.activate([

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeView : UIView {
+final class HomeView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +42,7 @@ class HomeView : UIView {
     
 }
 
-extension HomeView {
+private extension HomeView {
     private func setUpViews() {
         self.addSubview(Content)
         self.backgroundColor = .white

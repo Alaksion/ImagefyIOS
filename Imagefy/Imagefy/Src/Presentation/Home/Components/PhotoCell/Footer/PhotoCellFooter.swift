@@ -71,7 +71,7 @@ final class PhotoCellFooter: UIView {
     
 }
 
-extension PhotoCellFooter {
+private extension PhotoCellFooter {
     
     private func setUpViews() {
         addSubview(Content)

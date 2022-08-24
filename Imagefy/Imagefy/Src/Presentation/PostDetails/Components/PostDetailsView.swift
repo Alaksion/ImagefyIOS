@@ -51,7 +51,7 @@ final class PostDetailsView: UIView {
     
 }
 
-extension PostDetailsView {
+private extension PostDetailsView {
     func setUpView() {
         self.addSubview(Content)
         self.backgroundColor = .systemBackground
