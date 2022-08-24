@@ -46,6 +46,7 @@
 		E5595A8A28B5490100BD531A /* AuthorProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5595A8928B5490100BD531A /* AuthorProfileViewDelegate.swift */; };
 		E5595A8D28B5541300BD531A /* PostDetailsInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5595A8C28B5541300BD531A /* PostDetailsInfoRow.swift */; };
 		E5595A9028B6883500BD531A /* PostDetailsInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5595A8F28B6883500BD531A /* PostDetailsInfoCard.swift */; };
+		E5595A9528B6917600BD531A /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5595A9428B6917600BD531A /* HomeViewDelegate.swift */; };
 		E5872616288F5D5D00A3CE2C /* AuthorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872615288F5D5D00A3CE2C /* AuthorProfileViewController.swift */; };
 		E5872618288F5D7B00A3CE2C /* AuthorProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */; };
 		E587261A288F5D8F00A3CE2C /* AuthorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */; };
@@ -126,6 +127,7 @@
 		E5595A8928B5490100BD531A /* AuthorProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewDelegate.swift; sourceTree = "<group>"; };
 		E5595A8C28B5541300BD531A /* PostDetailsInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsInfoRow.swift; sourceTree = "<group>"; };
 		E5595A8F28B6883500BD531A /* PostDetailsInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsInfoCard.swift; sourceTree = "<group>"; };
+		E5595A9428B6917600BD531A /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 		E5872615288F5D5D00A3CE2C /* AuthorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewController.swift; sourceTree = "<group>"; };
 		E5872617288F5D7B00A3CE2C /* AuthorProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewModel.swift; sourceTree = "<group>"; };
 		E5872619288F5D8F00A3CE2C /* AuthorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileView.swift; sourceTree = "<group>"; };
@@ -174,8 +176,8 @@
 		E522BFC628846B1E001F6AE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5595A9128B6904C00BD531A /* HomeView */,
 				E587261B288F5F0600A3CE2C /* PhotoCell */,
-				E5A7B23A2884646E0051A541 /* HomeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -304,10 +306,9 @@
 		E527638A287A0A47000E1F24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E5595A9228B6909900BD531A /* ViewModel */,
 				E522BFC628846B1E001F6AE9 /* Components */,
 				E5276374287A0946000E1F24 /* HomeViewController.swift */,
-				E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */,
-				E5CC0301288C4FEA00E404B3 /* HomeViewModelDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -454,6 +455,24 @@
 				E5595A8F28B6883500BD531A /* PostDetailsInfoCard.swift */,
 			);
 			path = PostDetailsinfo;
+			sourceTree = "<group>";
+		};
+		E5595A9128B6904C00BD531A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E5A7B23A2884646E0051A541 /* HomeView.swift */,
+				E5595A9428B6917600BD531A /* HomeViewDelegate.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		E5595A9228B6909900BD531A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC0301288C4FEA00E404B3 /* HomeViewModelDelegate.swift */,
+				E52763AC287CBEA9000E1F24 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E5872614288F5D3F00A3CE2C /* AuthorProfile */ = {
@@ -792,6 +811,7 @@
 				E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */,
 				E5595A8A28B5490100BD531A /* AuthorProfileViewDelegate.swift in Sources */,
 				E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */,
+				E5595A9528B6917600BD531A /* HomeViewDelegate.swift in Sources */,
 				E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */,
 				E587261D288F5F1600A3CE2C /* PhotoCellDelegate.swift in Sources */,
 				E550DE2028A8C7A3009C689B /* PhotoDetailsResponse.swift in Sources */,

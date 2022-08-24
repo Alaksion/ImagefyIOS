@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HomeViewModelDelegate, PhotoCellDelegate, SkeletonLoadable {
+class HomeViewController: UIViewController, HomeViewModelDelegate, SkeletonLoadable {
         
     private let homeViewModel: HomeViewModel
     private let coordinator: CoordinatorProtocol
@@ -33,9 +33,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func setUpViews() {
         self.view = homeView
-        homeView.PhotosTable.delegate = self
-        homeView.PhotosTable.dataSource = self
-        homeView.PhotosTable.register(PhotoCell.self, forCellReuseIdentifier: "photoCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,54 +48,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 }
 
 extension HomeViewController {
- 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #1 Cria uma seção para cada item
-        return homeViewModel.photos.count
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #2 Coloca somente um item por seção
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        // #3 Configura o header da seção pra ter tamanho 10
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        // Deixa o header invisível, combinado com os passos #1, #2 e #3 cria um espaçamento entre os table cells
-        // Parece meio macarrônico mas funciona.
-            let headerView = UIView()
-            headerView.backgroundColor = UIColor.clear
-            return headerView
-        }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoCell
-        let data = homeViewModel.photos[indexPath.section]
-        cell.data = data
-        cell.delegate = self
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // Configurando o tamanho das table cells para ocuparem 60% do tamanho da view desse view controller
-        let screenHeight = self.view.bounds.height
-        return screenHeight * 0.6
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Notifica o ViewModel para chamar a próxima página quando chegar no penúltimo cell
-        if indexPath.row == homeViewModel.photos.count - 1 {
-            homeViewModel.getPhotos()
-        }
-    }
-    
-    func onResponse() {
+    func onResponse(photos: [FeedPhoto]) {
         DispatchQueue.main.async {
-            self.homeView.PhotosTable.reloadData()
+            self.homeView.updatePhotos(newPhotos: photos)
         }
     }
     

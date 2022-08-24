@@ -10,6 +10,8 @@ import UIKit
 
 final class PhotoCell: UITableViewCell {
     
+    static let Id = "photoCell"
+    
     var delegate: PhotoCellDelegate?
     
     var data: FeedPhoto? {

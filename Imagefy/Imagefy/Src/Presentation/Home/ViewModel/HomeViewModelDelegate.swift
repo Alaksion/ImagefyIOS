@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeViewModelDelegate {
     
-    func onResponse()
+    func onResponse(photos: [FeedPhoto])
     func onError(error: RequestError)
     
 }

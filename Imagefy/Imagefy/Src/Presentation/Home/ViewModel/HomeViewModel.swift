@@ -35,7 +35,7 @@ final class HomeViewModel {
                     isNextPageLoading = false
                 case .success(let data):
                     photos.append(contentsOf: data)
-                    delegate?.onResponse()
+                    delegate?.onResponse(photos: self.photos)
                     page = page + 1
                     isNextPageLoading = false
                 }
