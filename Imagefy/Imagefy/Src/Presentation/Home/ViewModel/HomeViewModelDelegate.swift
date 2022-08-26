@@ -11,5 +11,6 @@ protocol HomeViewModelDelegate {
     
     func onResponse(photos: [FeedPhoto])
     func onError(error: RequestError)
+    func showNewState(newState: HomeViewState)
     
 }

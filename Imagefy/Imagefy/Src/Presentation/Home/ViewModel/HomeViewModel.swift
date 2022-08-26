@@ -28,23 +28,30 @@ final class HomeViewModel {
             if shouldLoadNextPage() {
                 isNextPageLoading = true
                 let response = await repository.getFeedPhotos(page: page)
-                
-                switch response {
-                case .failure(let error):
-                    delegate?.onError(error: error)
-                    isNextPageLoading = false
-                case .success(let data):
-                    photos.append(contentsOf: data)
-                    delegate?.onResponse(photos: self.photos)
-                    page = page + 1
-                    isNextPageLoading = false
-                }
+                handleResponse(data: response)
             }
+        }
+    }
+    
+    private func handleResponse(data: Result<[FeedPhoto], RequestError>) {
+        switch data {
+        case .failure(let error):
+            delegate?.onError(error: error)
+            isNextPageLoading = false
+        case .success(let data):
+            if page == 1 {
+                delegate?.showNewState(newState: .ready)
+            }
+            photos.append(contentsOf: data)
+            delegate?.onResponse(photos: self.photos)
+            page = page + 1
+            isNextPageLoading = false
         }
     }
     
     private func shouldLoadNextPage() -> Bool {
         if page == 1 {
+            delegate?.showNewState(newState: .loading)
             return true
         }
         

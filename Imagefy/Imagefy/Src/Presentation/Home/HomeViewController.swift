@@ -22,18 +22,15 @@ class HomeViewController: UIViewController, SkeletonLoadable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let homeView = HomeView()
+    private lazy var homeView = HomeView()
+    
+    private lazy var loadingView = HomeLoadingView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
+        updateState(newState: .loading)
         homeViewModel.delegate = self
         homeViewModel.getPhotos()
-    }
-    
-    private func setUpViews() {
-        self.view = homeView
-        self.homeView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +43,19 @@ class HomeViewController: UIViewController, SkeletonLoadable {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+}
+
+extension HomeViewController {
+    
+    private func updateState(newState: HomeViewState) {
+        switch newState {
+        case .loading:
+            self.view = loadingView
+        case .ready:
+            self.view = homeView
+            self.homeView.delegate = self
+        }
+    }
 }
 
 extension HomeViewController: HomeViewDelegate {
@@ -61,6 +71,12 @@ extension HomeViewController: HomeViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    
+    func showNewState(newState: HomeViewState) {
+        DispatchQueue.main.async {
+            self.updateState(newState: newState)
+        }
+    }
  
     func onResponse(photos: [FeedPhoto]) {
         DispatchQueue.main.async {
