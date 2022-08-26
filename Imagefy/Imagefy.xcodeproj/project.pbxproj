@@ -64,6 +64,7 @@
 		E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */; };
 		E5D36AC128B8837B00DC7043 /* HomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */; };
 		E5D36AC328B887B000DC7043 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC228B887B000DC7043 /* HomeViewState.swift */; };
+		E5D36AC628B88A4D00DC7043 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC528B88A4D00DC7043 /* AppScreen.swift */; };
 		E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */; };
 		E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */; };
 		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
@@ -147,6 +148,7 @@
 		E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContainer.swift; sourceTree = "<group>"; };
 		E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingView.swift; sourceTree = "<group>"; };
 		E5D36AC228B887B000DC7043 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
+		E5D36AC528B88A4D00DC7043 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryTest.swift; sourceTree = "<group>"; };
 		E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		E5276384287A094F000E1F24 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E5D36AC428B88A4300DC7043 /* Screen */,
 				E5CC0317288F582C00E404B3 /* Injection */,
 				E5CC030D288C6B7B00E404B3 /* Extensions */,
 				E527638B287A0A62000E1F24 /* Network */,
@@ -607,6 +610,14 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		E5D36AC428B88A4300DC7043 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E5D36AC528B88A4D00DC7043 /* AppScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		E5D4DA0D28A60B78009FFA5C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +860,7 @@
 				E5276373287A0946000E1F24 /* SceneDelegate.swift in Sources */,
 				E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */,
 				E5CC0316288F496D00E404B3 /* ApplicationCoordinator.swift in Sources */,
+				E5D36AC628B88A4D00DC7043 /* AppScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

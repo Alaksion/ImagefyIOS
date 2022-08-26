@@ -8,20 +8,7 @@
 import Foundation
 import UIKit
 
-final class HomeView : UIView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUpViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override func layoutSubviews() {
-        setUpViews()
-    }
+final class HomeView : AppScreen {
     
     private var photos: [FeedPhoto] = []
     
@@ -40,10 +27,8 @@ final class HomeView : UIView {
         return view
     }()
     
-}
-
-extension HomeView {
-    private func setUpViews() {
+    
+    override func setUpView() {
         self.addSubview(Content)
         self.backgroundColor = .white
         Content.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
@@ -55,6 +40,9 @@ extension HomeView {
         PhotosTable.dataSource = self
         PhotosTable.prefetchDataSource = self
     }
+}
+
+extension HomeView {
     
     func updatePhotos(newPhotos: [FeedPhoto]) {
         self.photos = newPhotos
