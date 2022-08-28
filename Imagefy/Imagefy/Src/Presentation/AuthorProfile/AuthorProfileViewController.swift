@@ -12,8 +12,9 @@ class AuthorProfileViewController : UIViewController {
     
     private let authorViewModel: AuthorProfileViewModel
     private let authorUserName: String
-    private let contentView = AuthorProfileView()
     private let navigator: ApplicationCoordinator
+    
+    private lazy var contentView = AuthorProfileView()
     
     init(model: AuthorProfileViewModel, authorName: String, navigator: ApplicationCoordinator) {
         self.authorViewModel = model
@@ -28,8 +29,10 @@ class AuthorProfileViewController : UIViewController {
     
     override func viewDidLoad() {
         self.view = contentView
+        
+        self.authorViewModel.delegate = self
         self.contentView.delegate = self
-        authorViewModel.delegate = self
+        
         authorViewModel.getAuthorProfile(with: authorUserName)
         authorViewModel.getAuthorPhotos(with: authorUserName)
     }

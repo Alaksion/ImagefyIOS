@@ -70,7 +70,7 @@ private extension AuthorProfileView {
     
     private func setUpViews() {
         self.addSubview(Content)
-        self.backgroundColor = .white
+        self.backgroundColor = .systemBackground
         NSLayoutConstraint.activate([
                 Content.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
                 Content.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, SkeletonLoadable {
+class HomeViewController: UIViewController {
         
     private let homeViewModel: HomeViewModel
     private let coordinator: CoordinatorProtocol

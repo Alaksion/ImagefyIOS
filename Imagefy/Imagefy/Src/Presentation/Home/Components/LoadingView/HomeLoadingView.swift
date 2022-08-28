@@ -33,12 +33,6 @@ final class HomeLoadingView: UIView {
         return view
     }()
     
-    private lazy var Teste: UILabel = {
-        let view = UILabel()
-        view.text = "hello"
-        return view
-    }()
-    
 }
 
 private extension HomeLoadingView {
