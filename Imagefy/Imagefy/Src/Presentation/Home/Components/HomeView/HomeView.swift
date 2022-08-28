@@ -65,6 +65,11 @@ extension HomeView : UITableViewDataSource {
         let data = photos[indexPath.section]
         cell.data = data
         cell.delegate = self
+        
+        if indexPath.section == photos.count - 1 {
+            delegate?.onReachEndOfList()
+        }
+        
         return cell
     }
     
@@ -94,19 +99,4 @@ extension HomeView: UITableViewDelegate {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-}
-
-extension HomeView: UITableViewDataSourcePrefetching {
-    
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        let unloadedCells = indexPaths.filter { index in
-            index.item >= photos.count - 1
-        }
-        
-        // If there are future cells being prepared to be displayed
-        if !unloadedCells.isEmpty {
-            delegate?.onReachEndOfList()
-        }
-    }
-    
 }
