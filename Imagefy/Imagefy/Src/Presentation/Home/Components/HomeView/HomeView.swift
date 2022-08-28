@@ -38,7 +38,6 @@ final class HomeView : AppScreen {
         
         PhotosTable.delegate = self
         PhotosTable.dataSource = self
-        PhotosTable.prefetchDataSource = self
     }
 }
 

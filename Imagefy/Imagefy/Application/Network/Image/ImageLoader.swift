@@ -18,6 +18,8 @@ protocol ImageLoaderProtocol {
 
 final class DefaultImageLoader: ImageLoaderProtocol {
     
+    private let cacheSize = 19
+    
     static let loader = DefaultImageLoader()
     
     internal var loadedImages: [URL : UIImage] = [ : ]
@@ -40,9 +42,8 @@ final class DefaultImageLoader: ImageLoaderProtocol {
             defer { self.runningRequests.removeValue(forKey: requestId)}
             
             if let requestData = data, let image = UIImage(data: requestData) {
-                self.loadedImages[url] = image
+                self.cacheImage(image: image, url: url)
                 completion(.success(image))
-                debugPrint("Requesting data for \(url.path)")
                 return
             }
             
@@ -69,5 +70,20 @@ final class DefaultImageLoader: ImageLoaderProtocol {
         runningRequests.removeValue(forKey: id)
     }
     
+    // To save resources the cache size is limited, when the cache's limit is reached
+    // the first image is replaced by the most recent.
+    private func cacheImage(image: UIImage, url: URL) {
+        if loadedImages.count > cacheSize {
+            for firstImage in loadedImages.keys {
+                debugPrint("\(firstImage.path) removed from cache")
+                loadedImages[firstImage] = nil
+                loadedImages[url] = image
+                return
+            }
+        } else {
+            loadedImages[url] = image
+        }
+        debugPrint("\(url.path) stored in cache")
+    }
     
 }
