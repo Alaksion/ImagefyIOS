@@ -32,9 +32,17 @@ final class PostDetailsView: UIView {
     }
     
     private lazy var Content: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [PostPhoto, InfoRow, UIView()])
+        let view = UIStackView(arrangedSubviews: [PostPhoto])
         view.axis = .vertical
         view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var InfoContent: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [UIView(), InfoRow, UIView()])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.alignment = .center
         return view
     }()
     
@@ -46,6 +54,7 @@ final class PostDetailsView: UIView {
     
     private lazy var InfoRow: PostDetailsRow = {
         let view = PostDetailsRow()
+        view.backgroundColor = .black.withAlphaComponent(0.4)
         return view
     }()
     
@@ -61,5 +70,14 @@ private extension PostDetailsView {
             Content.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             Content.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+        
+        self.addSubview(InfoContent)
+        self.bringSubviewToFront(InfoContent)
+        NSLayoutConstraint.activate([
+            InfoContent.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            InfoContent.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            InfoContent.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40),
+        ])
+        
     }
 }
