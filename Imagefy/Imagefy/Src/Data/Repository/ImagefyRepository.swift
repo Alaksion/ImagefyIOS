@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Caravel
 
 struct ImagefyRepository: ImagefyRepositoryProtocol {
 

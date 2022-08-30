@@ -65,7 +65,7 @@
 		E5D36AC128B8837B00DC7043 /* HomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */; };
 		E5D36AC328B887B000DC7043 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC228B887B000DC7043 /* HomeViewState.swift */; };
 		E5D36AC628B88A4D00DC7043 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC528B88A4D00DC7043 /* AppScreen.swift */; };
-		E5D36AD228BE517E00DC7043 /* Caravel in Frameworks */ = {isa = PBXBuildFile; productRef = E5D36AD128BE517E00DC7043 /* Caravel */; };
+		E5D36AD628BE532700DC7043 /* Caravel in Frameworks */ = {isa = PBXBuildFile; productRef = E5D36AD528BE532700DC7043 /* Caravel */; };
 		E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */; };
 		E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */; };
 		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
@@ -92,9 +92,8 @@
 		E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeader.swift; sourceTree = "<group>"; };
 		E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeaderDelegate.swift; sourceTree = "<group>"; };
 		E5237D4028A1852C00D5B33B /* PhotoCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellFooter.swift; sourceTree = "<group>"; };
-		E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagefyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ImagefyTests.xctest; path = "/Users/luccabeurmann/XcodeProjects/ImagefyIOS/Imagefy/build/Debug-iphoneos/ImagefyTests.xctest"; sourceTree = "<absolute>"; };
 		E5237D4F28A1A71300D5B33B /* ExampleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTest.swift; sourceTree = "<group>"; };
-		E527636D287A0946000E1F24 /* Imagefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5276370287A0946000E1F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5276372287A0946000E1F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E5276374287A0946000E1F24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +148,8 @@
 		E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingView.swift; sourceTree = "<group>"; };
 		E5D36AC228B887B000DC7043 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		E5D36AC528B88A4D00DC7043 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
-		E5D36ACF28BE50CA00DC7043 /* Caravel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caravel; path = ../Caravel; sourceTree = "<group>"; };
+		E5D36AD328BE530A00DC7043 /* Caravel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caravel; path = ../Caravel; sourceTree = "<group>"; };
+		E5D36AD728BE547F00DC7043 /* Imagefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryTest.swift; sourceTree = "<group>"; };
 		E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D36AD228BE517E00DC7043 /* Caravel in Frameworks */,
+				E5D36AD628BE532700DC7043 /* Caravel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,21 +220,12 @@
 		E5276364287A0946000E1F24 = {
 			isa = PBXGroup;
 			children = (
-				E5D36ACF28BE50CA00DC7043 /* Caravel */,
+				E5D36AD328BE530A00DC7043 /* Caravel */,
 				E527636F287A0946000E1F24 /* Imagefy */,
 				E5237D4728A1A61200D5B33B /* ImagefyTests */,
-				E527636E287A0946000E1F24 /* Products */,
-				E5D36AD028BE517E00DC7043 /* Frameworks */,
+				E5D36AD428BE532700DC7043 /* Frameworks */,
+				E5D36AD728BE547F00DC7043 /* Imagefy.app */,
 			);
-			sourceTree = "<group>";
-		};
-		E527636E287A0946000E1F24 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E527636D287A0946000E1F24 /* Imagefy.app */,
-				E5237D4628A1A61200D5B33B /* ImagefyTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E527636F287A0946000E1F24 /* Imagefy */ = {
@@ -620,7 +611,7 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		E5D36AD028BE517E00DC7043 /* Frameworks */ = {
+		E5D36AD428BE532700DC7043 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -724,10 +715,10 @@
 			);
 			name = Imagefy;
 			packageProductDependencies = (
-				E5D36AD128BE517E00DC7043 /* Caravel */,
+				E5D36AD528BE532700DC7043 /* Caravel */,
 			);
 			productName = Imagefy;
-			productReference = E527636D287A0946000E1F24 /* Imagefy.app */;
+			productReference = E5D36AD728BE547F00DC7043 /* Imagefy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -758,7 +749,7 @@
 				Base,
 			);
 			mainGroup = E5276364287A0946000E1F24;
-			productRefGroup = E527636E287A0946000E1F24 /* Products */;
+			productRefGroup = E5276364287A0946000E1F24;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1063,6 +1054,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1090,6 +1082,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1136,7 +1129,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E5D36AD128BE517E00DC7043 /* Caravel */ = {
+		E5D36AD528BE532700DC7043 /* Caravel */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Caravel;
 		};
