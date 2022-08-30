@@ -8,20 +8,20 @@
 import Foundation
 import UIKit
 
-protocol UIImageLoaderProtocol {
+public protocol UIImageLoaderProtocol {
     func load(from url: URL, to imageView: UIImageView)
     func cancelLoad(from : UIImageView)
 }
 
-final class UIImageLoader: UIImageLoaderProtocol {
-    static let loader = UIImageLoader()
+public final class UIImageLoader: UIImageLoaderProtocol {
+    public static let loader = UIImageLoader()
     
     private let imageLoader = DefaultImageLoader()
     private var requestIds: [UIImageView: UUID] = [ : ]
     
     private init() {}
     
-    func load(from url: URL, to imageView: UIImageView) {
+    public func load(from url: URL, to imageView: UIImageView) {
         let token = imageLoader.loadImage(url) { result in
             defer { self.requestIds.removeValue(forKey: imageView)}
             
@@ -40,7 +40,7 @@ final class UIImageLoader: UIImageLoaderProtocol {
         }
     }
     
-    func cancelLoad(from imageView: UIImageView) {
+    public func cancelLoad(from imageView: UIImageView) {
         if let uuid = requestIds[imageView] {
             imageLoader.cancelLoading(uuid)
             requestIds.removeValue(forKey: imageView)

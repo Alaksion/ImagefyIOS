@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Caravel
 
 class HomeViewController: UIViewController {
         

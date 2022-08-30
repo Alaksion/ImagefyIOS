@@ -7,7 +7,7 @@
 
 import Foundation
 
-func handleResponse<R, D>(
+public func handleResponse<R, D>(
     result: Result<R, RequestError>,
     mapper: (R) -> D
 ) -> Result<D, RequestError> {

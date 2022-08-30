@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol HttpClient {
+public protocol HttpClient {
     func sendRequest<T: Decodable>(
         endpoint: EndpointProtocol
     ) async -> Result<T, RequestError>
 }
 
-extension HttpClient {
+public extension HttpClient {
     
     func sendRequest<T>(
         endpoint: EndpointProtocol

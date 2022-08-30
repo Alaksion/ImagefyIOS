@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EndpointProtocol {
+public protocol EndpointProtocol {
     var baseURL: String { get }
     var path: String { get }
     var method: HTTPMethod { get }
@@ -19,7 +19,7 @@ protocol EndpointProtocol {
 Default Base url is unsplash's api url.
 Queries and Headers are empty by default
 */
-extension EndpointProtocol {
+public extension EndpointProtocol {
     
     var baseURL: String { "https://api.unsplash.com/" }
     

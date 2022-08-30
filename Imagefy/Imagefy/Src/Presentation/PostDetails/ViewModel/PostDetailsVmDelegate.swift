@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Caravel
 
 protocol PostDetailsVmDelegate {
     func onSuccess(data: PhotoDetails)

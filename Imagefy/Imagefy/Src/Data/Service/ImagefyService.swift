@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Caravel
 
 enum ImagefyService {
     case listPhotos(page: Int)

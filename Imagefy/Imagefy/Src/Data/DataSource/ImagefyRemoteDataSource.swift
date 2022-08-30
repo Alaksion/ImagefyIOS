@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Caravel
 
 protocol ImagefyRemoteDataSourceProtocol {
     func listPhotos(page: Int) async -> Result<[FeedPhotoResponse], RequestError>

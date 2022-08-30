@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Caravel
 
 protocol AuthorProfileVmDelegate {
     func onAuthorProfileResponse(data: UserProfile)
