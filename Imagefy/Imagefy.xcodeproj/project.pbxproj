@@ -65,6 +65,7 @@
 		E5D36AC128B8837B00DC7043 /* HomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */; };
 		E5D36AC328B887B000DC7043 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC228B887B000DC7043 /* HomeViewState.swift */; };
 		E5D36AC628B88A4D00DC7043 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC528B88A4D00DC7043 /* AppScreen.swift */; };
+		E5D36AD228BE517E00DC7043 /* Caravel in Frameworks */ = {isa = PBXBuildFile; productRef = E5D36AD128BE517E00DC7043 /* Caravel */; };
 		E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */; };
 		E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */; };
 		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
@@ -148,6 +149,7 @@
 		E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingView.swift; sourceTree = "<group>"; };
 		E5D36AC228B887B000DC7043 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		E5D36AC528B88A4D00DC7043 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		E5D36ACF28BE50CA00DC7043 /* Caravel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caravel; path = ../Caravel; sourceTree = "<group>"; };
 		E5D4DA0B28A60B75009FFA5C /* ImagefyRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryTest.swift; sourceTree = "<group>"; };
 		E5D4DA0F28A60BAE009FFA5C /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D36AD228BE517E00DC7043 /* Caravel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,9 +220,11 @@
 		E5276364287A0946000E1F24 = {
 			isa = PBXGroup;
 			children = (
+				E5D36ACF28BE50CA00DC7043 /* Caravel */,
 				E527636F287A0946000E1F24 /* Imagefy */,
 				E5237D4728A1A61200D5B33B /* ImagefyTests */,
 				E527636E287A0946000E1F24 /* Products */,
+				E5D36AD028BE517E00DC7043 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -615,6 +620,13 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		E5D36AD028BE517E00DC7043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5D4DA0D28A60B78009FFA5C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +723,9 @@
 			dependencies = (
 			);
 			name = Imagefy;
+			packageProductDependencies = (
+				E5D36AD128BE517E00DC7043 /* Caravel */,
+			);
 			productName = Imagefy;
 			productReference = E527636D287A0946000E1F24 /* Imagefy.app */;
 			productType = "com.apple.product-type.application";
@@ -1119,6 +1134,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5D36AD128BE517E00DC7043 /* Caravel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Caravel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5276365287A0946000E1F24 /* Project object */;
 }
