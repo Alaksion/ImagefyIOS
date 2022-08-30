@@ -11,13 +11,12 @@ final class HomeViewModel {
     
     private let repository: ImagefyRepositoryProtocol
     
-    var photos : [FeedPhoto] = []
-    var page: Int = 1
+    private(set) var photos : [FeedPhoto] = []
+    
+    private var page: Int = 1
     private var isNextPageLoading = false
     
     var delegate: HomeViewModelDelegate?
-    
-    let imageLoader = DefaultImageLoader()
     
     init(_ repository: ImagefyRepositoryProtocol) {
         self.repository = repository

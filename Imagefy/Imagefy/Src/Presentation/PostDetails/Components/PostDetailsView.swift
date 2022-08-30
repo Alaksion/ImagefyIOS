@@ -43,6 +43,7 @@ final class PostDetailsView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
+        view.backgroundColor = .black.withAlphaComponent(0.4)
         return view
     }()
     
@@ -54,7 +55,6 @@ final class PostDetailsView: UIView {
     
     private lazy var InfoRow: PostDetailsRow = {
         let view = PostDetailsRow()
-        view.backgroundColor = .black.withAlphaComponent(0.4)
         return view
     }()
     
