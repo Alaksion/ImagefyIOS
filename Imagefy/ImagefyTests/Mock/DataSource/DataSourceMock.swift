@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import Imagefy
+@testable import Caravel
 
 final class DataSourceMock: ImagefyRemoteDataSourceProtocol {
     
@@ -79,5 +80,23 @@ final class DataSourceMock: ImagefyRemoteDataSourceProtocol {
         ])
     }
     
+    func getPhoto(withId id: String) async -> Result<PhotoDetailsResponse, RequestError> {
+        return .success(
+            PhotoDetailsResponse(
+                id: "",
+                color: "red",
+                downloads: 10,
+                likes: 10,
+                description: nil,
+                urls: PhotoDetailsLinksResponse(
+                    raw: "",
+                    regular: "",
+                    full: "",
+                    small: "",
+                    thumb: ""
+                )
+            )
+        )
+    }
     
 }

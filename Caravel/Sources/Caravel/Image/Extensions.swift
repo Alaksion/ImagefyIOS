@@ -1,15 +1,14 @@
 //
-//  UIImageView.swift
-//  Imagefy
+//  File.swift
+//  
 //
-//  Created by Lucca Beurmann on 23/07/22.
+//  Created by Lucca Beurmann on 30/08/22.
 //
 
 import Foundation
 import UIKit
-import Caravel
 
-extension UIImageView {
+public extension UIImageView {
     
     func loadImage(from value: String) {
         guard let url = URL(string: value) else {return}
@@ -19,5 +18,5 @@ extension UIImageView {
     func cancelLoading() {
         UIImageLoader.loader.cancelLoad(from: self)
     }
-        
+    
 }

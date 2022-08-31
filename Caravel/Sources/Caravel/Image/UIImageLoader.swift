@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-public protocol UIImageLoaderProtocol {
+protocol UIImageLoaderProtocol {
     func load(from url: URL, to imageView: UIImageView)
     func cancelLoad(from : UIImageView)
 }
 
-public final class UIImageLoader: UIImageLoaderProtocol {
+final class UIImageLoader: UIImageLoaderProtocol {
     public static let loader = UIImageLoader()
     
     private let imageLoader = DefaultImageLoader()

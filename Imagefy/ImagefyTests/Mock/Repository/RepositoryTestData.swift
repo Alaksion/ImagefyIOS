@@ -48,6 +48,7 @@ struct RepositoryTestData {
     
     static let userProfilePhoto = UserProfilePhoto(
         url: "url",
-        color: .red
+        color: .red,
+        id: ""
     )
 }
