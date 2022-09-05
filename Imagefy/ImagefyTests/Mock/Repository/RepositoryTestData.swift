@@ -51,4 +51,10 @@ struct RepositoryTestData {
         color: .red,
         id: ""
     )
+    
+    static let userProfilePhotos = [
+        RepositoryTestData.userProfilePhoto,
+        RepositoryTestData.userProfilePhoto,
+        RepositoryTestData.userProfilePhoto
+    ]
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E522B00B28BECBF500B29CA4 /* PostDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B00A28BECBF500B29CA4 /* PostDetailsViewModelTest.swift */; };
 		E522B00E28BECC7800B29CA4 /* PostDetailsVMFakeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B00D28BECC7800B29CA4 /* PostDetailsVMFakeDelegate.swift */; };
+		E522B01228C132E700B29CA4 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B01128C132E700B29CA4 /* HomeViewModelTest.swift */; };
+		E522B01428C132F700B29CA4 /* HomeViewModelFakeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B01328C132F700B29CA4 /* HomeViewModelFakeDelegate.swift */; };
+		E522B01728C5030000B29CA4 /* AuthorProfileViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B01628C5030000B29CA4 /* AuthorProfileViewModelTest.swift */; };
+		E522B01928C5034C00B29CA4 /* AuthorProfileFakeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522B01828C5034C00B29CA4 /* AuthorProfileFakeDelegate.swift */; };
 		E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522BFC728846B2D001F6AE9 /* PhotoCell.swift */; };
 		E5237D3B28A180B600D5B33B /* PhotoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */; };
 		E5237D3E28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */; };
@@ -85,6 +89,10 @@
 		E5022CE928BE54B30093C8AC /* ImagefyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagefyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E522B00A28BECBF500B29CA4 /* PostDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModelTest.swift; sourceTree = "<group>"; };
 		E522B00D28BECC7800B29CA4 /* PostDetailsVMFakeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsVMFakeDelegate.swift; sourceTree = "<group>"; };
+		E522B01128C132E700B29CA4 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		E522B01328C132F700B29CA4 /* HomeViewModelFakeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelFakeDelegate.swift; sourceTree = "<group>"; };
+		E522B01628C5030000B29CA4 /* AuthorProfileViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileViewModelTest.swift; sourceTree = "<group>"; };
+		E522B01828C5034C00B29CA4 /* AuthorProfileFakeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorProfileFakeDelegate.swift; sourceTree = "<group>"; };
 		E522BFC728846B2D001F6AE9 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E5237D3A28A180B600D5B33B /* PhotoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeader.swift; sourceTree = "<group>"; };
 		E5237D3D28A1824E00D5B33B /* PhotoCellHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellHeaderDelegate.swift; sourceTree = "<group>"; };
@@ -171,10 +179,38 @@
 		E522B00728BECAB200B29CA4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E522B01528C502EF00B29CA4 /* AuthorProfile */,
+				E522B01028C132D700B29CA4 /* Home */,
+				E522B00F28C132CB00B29CA4 /* PostDetails */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E522B00F28C132CB00B29CA4 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
 				E522B00A28BECBF500B29CA4 /* PostDetailsViewModelTest.swift */,
 				E522B00D28BECC7800B29CA4 /* PostDetailsVMFakeDelegate.swift */,
 			);
-			path = ViewModel;
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		E522B01028C132D700B29CA4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E522B01128C132E700B29CA4 /* HomeViewModelTest.swift */,
+				E522B01328C132F700B29CA4 /* HomeViewModelFakeDelegate.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E522B01528C502EF00B29CA4 /* AuthorProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E522B01628C5030000B29CA4 /* AuthorProfileViewModelTest.swift */,
+				E522B01828C5034C00B29CA4 /* AuthorProfileFakeDelegate.swift */,
+			);
+			path = AuthorProfile;
 			sourceTree = "<group>";
 		};
 		E522BFC628846B1E001F6AE9 /* Components */ = {
@@ -736,12 +772,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D4DA0C28A60B75009FFA5C /* ImagefyRepositoryTest.swift in Sources */,
+				E522B01928C5034C00B29CA4 /* AuthorProfileFakeDelegate.swift in Sources */,
 				E522B00B28BECBF500B29CA4 /* PostDetailsViewModelTest.swift in Sources */,
 				E5D4DA1028A60BAE009FFA5C /* DataSourceMock.swift in Sources */,
 				E5237D5028A1A71300D5B33B /* ExampleTest.swift in Sources */,
+				E522B01428C132F700B29CA4 /* HomeViewModelFakeDelegate.swift in Sources */,
 				E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */,
+				E522B01728C5030000B29CA4 /* AuthorProfileViewModelTest.swift in Sources */,
 				E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */,
 				E522B00E28BECC7800B29CA4 /* PostDetailsVMFakeDelegate.swift in Sources */,
+				E522B01228C132E700B29CA4 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,27 +17,31 @@ final class ImagefyRepositoryMock: ImagefyRepositoryProtocol {
     
     var photoDetailsReturnsSuccess = true
     
+    var feedPhotosResponse: Result<[FeedPhoto], RequestError> = .success([
+        RepositoryTestData.feedPhoto,
+        RepositoryTestData.feedPhoto,
+        RepositoryTestData.feedPhoto
+    ])
+    
+    var getUserProfileResponse: Result<UserProfile, RequestError> =
+        .success(RepositoryTestData.userProfile)
+    
+    var getUserPhotosResponse: Result<[UserProfilePhoto], RequestError> =
+        .success(RepositoryTestData.userProfilePhotos)
+
     func getFeedPhotos(page: Int) async -> Result<[FeedPhoto], RequestError> {
         feedPhotosCalls += 1
-        return .success([
-            RepositoryTestData.feedPhoto,
-            RepositoryTestData.feedPhoto,
-            RepositoryTestData.feedPhoto
-        ])
+        return feedPhotosResponse
     }
     
     func getUserProfile(username: String) async -> Result<UserProfile, RequestError> {
         userProfileCalls += 1
-        return .success(RepositoryTestData.userProfile)
+        return getUserProfileResponse
     }
     
     func getUserPhotos(username: String, page: Int) async -> Result<[UserProfilePhoto], RequestError> {
         userPhotosCalls += 1
-        return .success([
-            RepositoryTestData.userProfilePhoto,
-            RepositoryTestData.userProfilePhoto,
-            RepositoryTestData.userProfilePhoto
-        ])
+        return getUserPhotosResponse
     }
 
     func getPhotoDetails(withId id: String) async -> Result<PhotoDetails, RequestError> {
