@@ -62,9 +62,4 @@ final class AuthorProfileViewModelTest: XCTestCase {
         XCTAssertEqual(receivedPhotos.count, RepositoryTestData.userProfilePhotos.count)
     }
     
-    func testShouldUpdatePhotosState() {
-        let exepctation = XCTestExpectation(description: "get photos concluded")
-        
-    }
-    
 }
