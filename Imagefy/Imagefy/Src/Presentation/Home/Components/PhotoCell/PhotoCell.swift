@@ -54,6 +54,8 @@ final class PhotoCell: UITableViewCell {
     
     private lazy var Photo: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         return view
     }()
     
