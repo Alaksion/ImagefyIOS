@@ -62,6 +62,12 @@ extension HomeViewController {
 extension HomeViewController: HomeViewDelegate {
     
     func onProfileHeaderClicked(withUsername username: String) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: username,
+            style: .plain,
+            target: self,
+            action: nil
+        )
         coordinator.goToAuthor(withName: username)
     }
     

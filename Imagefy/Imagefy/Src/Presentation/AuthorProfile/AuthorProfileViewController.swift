@@ -34,10 +34,20 @@ class AuthorProfileViewController : UIViewController {
         self.authorViewModel.delegate = self
         self.contentView.delegate = self
         
+        self.setUpNavBar()
+        
         authorViewModel.getAuthorProfile(with: authorUserName)
         authorViewModel.getAuthorPhotos(with: authorUserName)
     }
     
+    private func setUpNavBar() {
+        guard let navBar = self.navigationController?.navigationBar else { return }
+        let arrowLeft = UIImage(systemName: "arrow.left")
+        
+        navBar.backIndicatorImage = arrowLeft
+        navBar.backIndicatorTransitionMaskImage = arrowLeft
+        navBar.tintColor = .black
+    }
 }
 
 extension AuthorProfileViewController : AuthorProfileVmDelegate{
