@@ -60,7 +60,6 @@
 		E5CC0305288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0304288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift */; };
 		E5CC0316288F496D00E404B3 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0315288F496D00E404B3 /* ApplicationCoordinator.swift */; };
 		E5CC0319288F583E00E404B3 /* ApplicationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */; };
-		E5D36AC128B8837B00DC7043 /* HomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */; };
 		E5D36AC328B887B000DC7043 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC228B887B000DC7043 /* HomeViewState.swift */; };
 		E5D36AC628B88A4D00DC7043 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36AC528B88A4D00DC7043 /* AppScreen.swift */; };
 		E5D36AD628BE532700DC7043 /* Caravel in Frameworks */ = {isa = PBXBuildFile; productRef = E5D36AD528BE532700DC7043 /* Caravel */; };
@@ -69,6 +68,7 @@
 		E5D4DA1828A6D2F7009FFA5C /* ImagefyRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */; };
 		E5D4DA1A28A6D41E009FFA5C /* RepositoryTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */; };
 		E5D4DA1D28A6D788009FFA5C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D4DA1C28A6D788009FFA5C /* UIColor.swift */; };
+		E5E07AAB28EF19E300D6BB3E /* BaseLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E07AAA28EF19E300D6BB3E /* BaseLoadingView.swift */; };
 		E5EDB01428AD735000CC0C9D /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01328AD735000CC0C9D /* PostDetailsViewController.swift */; };
 		E5EDB01728AD736200CC0C9D /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01628AD736200CC0C9D /* PostDetailsView.swift */; };
 		E5EDB01A28AD756C00CC0C9D /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDB01928AD756C00CC0C9D /* PostDetailsViewModel.swift */; };
@@ -141,7 +141,6 @@
 		E5CC0304288C5BF800E404B3 /* FeedPhotoAuthorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPhotoAuthorResponse.swift; sourceTree = "<group>"; };
 		E5CC0315288F496D00E404B3 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		E5CC0318288F583E00E404B3 /* ApplicationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContainer.swift; sourceTree = "<group>"; };
-		E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingView.swift; sourceTree = "<group>"; };
 		E5D36AC228B887B000DC7043 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		E5D36AC528B88A4D00DC7043 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		E5D36AD328BE530A00DC7043 /* Caravel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Caravel; path = ../Caravel; sourceTree = "<group>"; };
@@ -151,6 +150,7 @@
 		E5D4DA1728A6D2F7009FFA5C /* ImagefyRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagefyRepositoryMock.swift; sourceTree = "<group>"; };
 		E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTestData.swift; sourceTree = "<group>"; };
 		E5D4DA1C28A6D788009FFA5C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E5E07AAA28EF19E300D6BB3E /* BaseLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoadingView.swift; sourceTree = "<group>"; };
 		E5EDB01328AD735000CC0C9D /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		E5EDB01628AD736200CC0C9D /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
 		E5EDB01928AD756C00CC0C9D /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -216,7 +216,6 @@
 		E522BFC628846B1E001F6AE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E5D36ABF28B8836100DC7043 /* LoadingView */,
 				E5595A9128B6904C00BD531A /* HomeView */,
 				E587261B288F5F0600A3CE2C /* PhotoCell */,
 			);
@@ -331,6 +330,7 @@
 		E5276389287A0978000E1F24 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E5E07AA928EF19D400D6BB3E /* Components */,
 				E5EDB01228AD733B00CC0C9D /* PostDetails */,
 				E5872614288F5D3F00A3CE2C /* AuthorProfile */,
 				E527638A287A0A47000E1F24 /* Home */,
@@ -582,14 +582,6 @@
 			path = Injection;
 			sourceTree = "<group>";
 		};
-		E5D36ABF28B8836100DC7043 /* LoadingView */ = {
-			isa = PBXGroup;
-			children = (
-				E5D36AC028B8837B00DC7043 /* HomeLoadingView.swift */,
-			);
-			path = LoadingView;
-			sourceTree = "<group>";
-		};
 		E5D36AC428B88A4300DC7043 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +629,14 @@
 				E5D4DA1928A6D41E009FFA5C /* RepositoryTestData.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E5E07AA928EF19D400D6BB3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5E07AAA28EF19E300D6BB3E /* BaseLoadingView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E5EDB01228AD733B00CC0C9D /* PostDetails */ = {
@@ -801,6 +801,7 @@
 				E549922228930EAF00EA4271 /* UserProfileLink.swift in Sources */,
 				E5276375287A0946000E1F24 /* HomeViewController.swift in Sources */,
 				E5CA5098289EEFE6007E22D8 /* ProfileUserInfo.swift in Sources */,
+				E5E07AAB28EF19E300D6BB3E /* BaseLoadingView.swift in Sources */,
 				E5A7B23B2884646E0051A541 /* HomeView.swift in Sources */,
 				E522BFC828846B2D001F6AE9 /* PhotoCell.swift in Sources */,
 				E5499225289314BA00EA4271 /* UserProfileMapper.swift in Sources */,
@@ -811,7 +812,6 @@
 				E52763A9287CAD5C000E1F24 /* FeedPhoto.swift in Sources */,
 				E5D36AC328B887B000DC7043 /* HomeViewState.swift in Sources */,
 				E52763A5287CAC8A000E1F24 /* ImagefyRepositoryProtocol.swift in Sources */,
-				E5D36AC128B8837B00DC7043 /* HomeLoadingView.swift in Sources */,
 				E52763AB287CADFA000E1F24 /* ImagefyRepository.swift in Sources */,
 				E59CF6C32898C98E0073E367 /* UserProfilePhotoResponse.swift in Sources */,
 				E5EDB01A28AD756C00CC0C9D /* PostDetailsViewModel.swift in Sources */,

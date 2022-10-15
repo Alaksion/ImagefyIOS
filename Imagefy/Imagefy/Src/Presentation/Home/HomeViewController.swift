@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     
     private lazy var homeView = HomeView()
     
-    private lazy var loadingView = HomeLoadingView()
+    private lazy var loadingView = BaseLoadingView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

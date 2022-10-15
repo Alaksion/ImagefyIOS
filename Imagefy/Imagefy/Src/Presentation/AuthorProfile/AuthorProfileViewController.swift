@@ -16,6 +16,7 @@ class AuthorProfileViewController : UIViewController {
     private let navigator: ApplicationCoordinator
     
     private lazy var contentView = AuthorProfileView()
+    private lazy var loadingView = BaseLoadingView()
     
     init(model: AuthorProfileViewModel, authorName: String, navigator: ApplicationCoordinator) {
         self.authorViewModel = model
@@ -39,6 +40,9 @@ class AuthorProfileViewController : UIViewController {
         authorViewModel.getAuthorProfile(with: authorUserName)
         authorViewModel.getAuthorPhotos(with: authorUserName)
     }
+}
+
+private extension AuthorProfileViewController {
     
     private func setUpNavBar() {
         guard let navBar = self.navigationController?.navigationBar else { return }
@@ -48,6 +52,7 @@ class AuthorProfileViewController : UIViewController {
         navBar.backIndicatorTransitionMaskImage = arrowLeft
         navBar.tintColor = .black
     }
+    
 }
 
 extension AuthorProfileViewController : AuthorProfileVmDelegate{
